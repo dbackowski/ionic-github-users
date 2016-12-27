@@ -4,11 +4,14 @@ import { MyApp } from './app.component';
 import { UsersPage } from '../pages/users/users';
 import { ReposPage } from '../pages/repos/repos';
 import { OrganisationsPage } from '../pages/organisations/organisations';
+import { UserDetailsPage } from './../pages/user-details/user-details';
+import { Users } from './../providers/users';
 
 @NgModule({
   declarations: [
     MyApp,
     UsersPage,
+    UserDetailsPage,
     ReposPage,
     OrganisationsPage
   ],
@@ -19,9 +22,10 @@ import { OrganisationsPage } from '../pages/organisations/organisations';
   entryComponents: [
     MyApp,
     UsersPage,
+    UserDetailsPage,
     ReposPage,
     OrganisationsPage
   ],
-  providers: []
+  providers: [Users]
 })
 export class AppModule {}
