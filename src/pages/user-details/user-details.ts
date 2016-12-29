@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
+import { User } from '../../models/user';
+import { Users } from './../../providers/users';
+
 /*
   Generated class for the UserDetails page.
 
@@ -13,9 +16,15 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class UserDetailsPage {
   login: string;
+  user: User;
 
-  constructor(public navCtrl: NavController, private navParams: NavParams) {
+  constructor(public navCtrl: NavController, private navParams: NavParams, private Users: Users) {
     this.login = navParams.get('login');
+
+    Users.loadDetails(this.login).subscribe(user => {
+      this.user = user;
+      console.log(user)
+    })
   }
 
   ionViewDidLoad() {

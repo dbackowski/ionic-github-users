@@ -23,4 +23,9 @@ export class Users {
     return this.http.get(`${this.apiUrl}/users`)
       .map(res => <User[]>res.json());
   }
+
+  loadDetails(login: string): Observable<User> {
+    return this.http.get(`${this.apiUrl}/users/${login}`)
+      .map(res => <User>(res.json()))
+  }
 }
