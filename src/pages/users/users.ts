@@ -18,11 +18,7 @@ import { UserDetailsPage } from './../user-details/user-details';
 export class UsersPage {
   users: User[]
 
-  constructor(public navCtrl: NavController, private Users: Users) {
-    Users.load().subscribe(users => {
-      this.users = users;
-    })
-  }
+  constructor(public navCtrl: NavController, private Users: Users) {}
 
   ionViewDidLoad() {
     console.log('Hello UsersPage Page');
@@ -30,5 +26,15 @@ export class UsersPage {
 
   goToDetails(login: string) {
     this.navCtrl.push(UserDetailsPage, {login});
+  }
+
+  search(searchEvent) {
+    let term = searchEvent.target.value
+
+    if (term.trim().length >= 2) {
+      this.Users.searchUsers(term).subscribe(users => {
+        this.users = users
+      });
+    }
   }
 }
