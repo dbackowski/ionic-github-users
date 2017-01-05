@@ -3,7 +3,7 @@ import { Http } from '@angular/http';
 import { Observable } from 'rxjs/Rx'
 import 'rxjs/add/operator/map';
 
-import { User } from './../models/user';
+import { User } from '../models/user';
 
 /*
   Generated class for the Users provider.
