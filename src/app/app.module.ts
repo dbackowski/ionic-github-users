@@ -4,6 +4,7 @@ import { Storage } from '@ionic/storage';
 
 import { MyApp } from './app.component';
 import { UsersPage } from '../pages/users/users';
+import { FavoriteUsersPage } from '../pages/favorite-users/favorite-users';
 import { ReposPage } from '../pages/repos/repos';
 import { OrganisationsPage } from '../pages/organisations/organisations';
 import { UserDetailsPage } from '../pages/user-details/user-details';
@@ -14,6 +15,7 @@ import { FavoriteUsers } from "../providers/favorite-users";
   declarations: [
     MyApp,
     UsersPage,
+    FavoriteUsersPage,
     UserDetailsPage,
     ReposPage,
     OrganisationsPage
@@ -25,6 +27,7 @@ import { FavoriteUsers } from "../providers/favorite-users";
   entryComponents: [
     MyApp,
     UsersPage,
+    FavoriteUsersPage,
     UserDetailsPage,
     ReposPage,
     OrganisationsPage

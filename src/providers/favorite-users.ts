@@ -7,8 +7,8 @@ export class FavoriteUsers {
 
   constructor(private storage: Storage) {}
 
-  public load() {
-    this.storage.get('users')
+  public load(): Promise<any> {
+    return this.storage.get('users')
   }
 
   public add(login: string): Promise<any> {
