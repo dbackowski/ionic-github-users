@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, ToastController } from 'ionic-angular';
 
 import { FavoriteUsers } from "../../providers/favorite-users";
+import { UserDetailsPage } from '../user-details/user-details';
 
 @Component({
   selector: 'page-favorite-users',
@@ -17,7 +18,6 @@ export class FavoriteUsersPage {
   ) {}
 
   ionViewDidLoad() {
-    console.log('Hello FavoriteUsersPage Page');
     this.favoriteUsers.load().then((users) => {
       this.users = users;
     }).catch((error) => {
@@ -29,4 +29,7 @@ export class FavoriteUsersPage {
     });
   }
 
+  goToDetails(login: string) {
+    this.navCtrl.push(UserDetailsPage, {login});
+  }
 }

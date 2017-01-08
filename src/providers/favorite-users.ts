@@ -8,15 +8,29 @@ export class FavoriteUsers {
   constructor(private storage: Storage) {}
 
   public load(): Promise<any> {
-    return this.storage.get('users')
+    //this.storage.remove('users');
+    return this.storage.get('users');
   }
 
-  public add(login: string): Promise<any> {
-    return this.storage.set('users', [login])
+  public add(login: string, avatarUrl: string): Promise<any> {
+    //this.storage.remove('users');
+
+    return this.load().then((users) => {
+      console.log(users);
+      users = users ? users : []; 
+      users.push({ login: login, avatar_url: avatarUrl });
+      console.log(users);
+      this.storage.set('users', users);
+    })
   }
 
-  public delete() {
-
+  public delete(login: string): Promise<any> {
+    return this.load().then((users) => {
+      console.log(users);
+      console.log('usuwam');
+      console.log(users.filter((user) => user.login !== login));
+      this.storage.set('users', users.filter((user) => user.login !== login));
+    });
   }
 /*
   load(): Observable<User[]> {

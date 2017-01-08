@@ -12,6 +12,7 @@ import { FavoriteUsers } from "../../providers/favorite-users";
 export class UserDetailsPage {
   login: string;
   user: User;
+  inFavorites: boolean = false;
 
   constructor(
     public navCtrl: NavController, 
@@ -26,14 +27,22 @@ export class UserDetailsPage {
       this.user = user;
       console.log(user)
     })
+
+    this.favoriteUsers.load().then((users) => {
+      if (users) {
+        this.inFavorites = users.filter((user) => user.login == this.login).length > 0;
+      }
+    });
   }
 
   ionViewDidLoad() {
     console.log('Hello UserDetailsPage Page');
   }
 
-  public addToFavorites(login: string) {
-    this.favoriteUsers.add(login).then(() => {
+  public addToFavorites(login: string, avatarUrl: string) {
+    this.favoriteUsers.add(login, avatarUrl).then(() => {
+      this.inFavorites = true;
+
       this.toastCtrl.create({
           message: 'User added to favorites.',
           duration: 3000,
@@ -43,4 +52,15 @@ export class UserDetailsPage {
     );
   }
 
+  public removeFromFavorites(login: string) {
+    this.favoriteUsers.delete(login).then(() => {
+      this.inFavorites = false;
+      
+      this.toastCtrl.create({
+          message: 'User removed from favorites.',
+          duration: 3000,
+          position: 'bottom'
+        }).present();
+    });
+  }
 }

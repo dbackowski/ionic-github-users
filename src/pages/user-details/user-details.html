@@ -24,5 +24,6 @@
     </ion-item>
   </ion-list>    
 
-  <button ion-button (click)="addToFavorites(login)">Add to favorites</button>
+  <button ion-button *ngIf="!inFavorites" (click)="addToFavorites(login, user.avatar_url)">Add to favorites</button>
+  <button ion-button *ngIf="inFavorites" (click)="removeFromFavorites(login)">Remove from favorites</button>
 </ion-content>
