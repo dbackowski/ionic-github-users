@@ -3,10 +3,8 @@ import { IonicApp, IonicModule } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 
 import { MyApp } from './app.component';
-import { UsersPage } from '../pages/users/users';
+import { SearchUsersPage } from '../pages/search-users/search-users';
 import { FavoriteUsersPage } from '../pages/favorite-users/favorite-users';
-import { ReposPage } from '../pages/repos/repos';
-import { OrganisationsPage } from '../pages/organisations/organisations';
 import { UserDetailsPage } from '../pages/user-details/user-details';
 import { Users } from '../providers/users';
 import { FavoriteUsers } from "../providers/favorite-users";
@@ -14,11 +12,9 @@ import { FavoriteUsers } from "../providers/favorite-users";
 @NgModule({
   declarations: [
     MyApp,
-    UsersPage,
+    SearchUsersPage,
     FavoriteUsersPage,
-    UserDetailsPage,
-    ReposPage,
-    OrganisationsPage
+    UserDetailsPage  
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -26,11 +22,9 @@ import { FavoriteUsers } from "../providers/favorite-users";
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    UsersPage,
+    SearchUsersPage,
     FavoriteUsersPage,
-    UserDetailsPage,
-    ReposPage,
-    OrganisationsPage
+    UserDetailsPage  
   ],
   providers: [Users, FavoriteUsers, Storage]
 })

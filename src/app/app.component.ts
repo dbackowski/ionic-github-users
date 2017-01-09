@@ -2,9 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { Platform, MenuController, Nav } from 'ionic-angular';
 import { StatusBar } from 'ionic-native';
 
-import { UsersPage } from '../pages/users/users';
-import { ReposPage } from '../pages/repos/repos';
-import { OrganisationsPage } from '../pages/organisations/organisations';
+import { SearchUsersPage } from '../pages/search-users/search-users';
 import { FavoriteUsersPage } from '../pages/favorite-users/favorite-users';
 
 @Component({
@@ -13,8 +11,7 @@ import { FavoriteUsersPage } from '../pages/favorite-users/favorite-users';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  // make HelloIonicPage the root (or first) page
-  rootPage: any = UsersPage;
+  rootPage: any = SearchUsersPage;
   pages: Array<{title: string, component: any}>;
 
   constructor(
@@ -23,12 +20,9 @@ export class MyApp {
   ) {
     this.initializeApp();
 
-    // set our app's pages
     this.pages = [
-      { title: 'Users', component: UsersPage },
-      { title: 'Favorite Users', component: FavoriteUsersPage },
-      { title: 'Repos', component: ReposPage },
-      { title: 'Organisations', component: OrganisationsPage }
+      { title: 'Search Users', component: SearchUsersPage },
+      { title: 'Favorite Users', component: FavoriteUsersPage }
     ];
   }
 

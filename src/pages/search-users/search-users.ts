@@ -7,9 +7,9 @@ import { UserDetailsPage } from './../user-details/user-details';
 
 @Component({
   selector: 'page-users',
-  templateUrl: 'users.html'
+  templateUrl: 'search-users.html'
 })
-export class UsersPage {
+export class SearchUsersPage {
   users: User[]
 
   constructor(

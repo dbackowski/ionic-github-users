@@ -9,7 +9,7 @@ import { UserDetailsPage } from '../user-details/user-details';
   templateUrl: 'favorite-users.html'
 })
 export class FavoriteUsersPage {
-  public users: Array<number>;
+  public users: Array<Object>;
 
   constructor(
     public navCtrl: NavController, 
