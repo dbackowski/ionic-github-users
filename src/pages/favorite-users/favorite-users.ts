@@ -17,16 +17,19 @@ export class FavoriteUsersPage {
     private toastCtrl: ToastController
   ) {}
 
-  ionViewDidLoad() {
-    this.favoriteUsers.load().then((users) => {
-      this.users = users;
-    }).catch((error) => {
-      this.toastCtrl.create({
-        message: 'Error occured.',
-        duration: 3000,
-        position: 'bottom'
-      }).present();
-    });
+  ionViewDidEnter() {
+    this.favoriteUsers.load().subscribe(
+      (users) => {
+        this.users = users;
+      },
+      (error) => {
+        this.toastCtrl.create({
+          message: 'Error occured.',
+          duration: 3000,
+          position: 'bottom'
+        }).present();
+      }
+    );
   }
 
   goToDetails(login: string) {

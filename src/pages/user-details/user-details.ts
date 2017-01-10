@@ -28,7 +28,7 @@ export class UserDetailsPage {
       console.log(user)
     })
 
-    this.favoriteUsers.load().then((users) => {
+    this.favoriteUsers.load().subscribe((users) => {
       if (users) {
         this.inFavorites = users.filter((user) => user.login == this.login).length > 0;
       }
@@ -40,7 +40,7 @@ export class UserDetailsPage {
   }
 
   public addToFavorites(login: string, avatarUrl: string) {
-    this.favoriteUsers.add(login, avatarUrl).then(() => {
+    this.favoriteUsers.add(login, avatarUrl).subscribe(() => {
       this.inFavorites = true;
 
       this.toastCtrl.create({
@@ -53,7 +53,7 @@ export class UserDetailsPage {
   }
 
   public removeFromFavorites(login: string) {
-    this.favoriteUsers.delete(login).then(() => {
+    this.favoriteUsers.delete(login).subscribe(() => {
       this.inFavorites = false;
       
       this.toastCtrl.create({
