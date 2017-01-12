@@ -8,7 +8,7 @@ import { FavoriteUsersPage } from '../pages/favorite-users/favorite-users';
 @Component({
   templateUrl: 'app.html'
 })
-export class MyApp {
+export class MyAppComponent {
   @ViewChild(Nav) nav: Nav;
 
   rootPage: any = SearchUsersPage;

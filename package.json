@@ -30,8 +30,14 @@
     "zone.js": "0.6.21"
   },
   "devDependencies": {
+    "@angular/compiler": "^2.4.0",
+    "@angular/core": "^2.4.0",
     "@ionic/app-scripts": "0.0.39",
-    "typescript": "2.0.6"
+    "codelyzer": "^2.0.0-beta.4",
+    "rxjs": "^5.0.1",
+    "tslint": "^4.0.0",
+    "typescript": "^2.0.9",
+    "zone.js": "^0.7.2"
   },
   "description": "github-user-viewer: An Ionic project",
   "cordovaPlugins": [
