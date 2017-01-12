@@ -22,21 +22,18 @@ export class UserDetailsPage {
     private toastCtrl: ToastController,
   ) {
     this.login = navParams.get('login');
+  }
 
-    Users.loadDetails(this.login).subscribe(user => {
+  ionViewDidLoad() {
+    this.Users.loadDetails(this.login).subscribe(user => {
       this.user = user;
-      console.log(user)
-    })
+    });
 
     this.favoriteUsers.load().subscribe((users) => {
       if (users) {
         this.inFavorites = users.filter((user) => user.login == this.login).length > 0;
       }
     });
-  }
-
-  ionViewDidLoad() {
-    console.log('Hello UserDetailsPage Page');
   }
 
   public addToFavorites(login: string, avatarUrl: string) {

@@ -19,10 +19,6 @@ export class SearchUsersPage {
     private toastCtrl: ToastController
   ) {}
 
-  ionViewDidLoad() {
-    console.log('Hello UsersPage Page');
-  }
-
   goToDetails(login: string) {
     this.navCtrl.push(UserDetailsPage, {login});
   }

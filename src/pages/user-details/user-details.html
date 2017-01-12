@@ -4,7 +4,7 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding >
+<ion-content padding>
   <ion-list>
     <ion-item>
       <ion-label>Followers</ion-label>
@@ -24,6 +24,6 @@
     </ion-item>
   </ion-list>    
 
-  <button ion-button *ngIf="!inFavorites" (click)="addToFavorites(login, user.avatar_url)">Add to favorites</button>
-  <button ion-button *ngIf="inFavorites" (click)="removeFromFavorites(login)">Remove from favorites</button>
+  <button ion-button block *ngIf="!inFavorites" (click)="addToFavorites(login, user.avatar_url)">Add to favorites</button>
+  <button ion-button block *ngIf="inFavorites" (click)="removeFromFavorites(login)">Remove from favorites</button>
 </ion-content>
