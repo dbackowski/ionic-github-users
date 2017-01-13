@@ -6,10 +6,10 @@ import { Users } from '../../providers/users';
 import { FavoriteUsers } from "../../providers/favorite-users";
 
 @Component({
-  selector: 'page-user-details',
+  selector: 'sg-page-user-details',
   templateUrl: 'user-details.html'
 })
-export class UserDetailsPage {
+export class UserDetailsPageComponent {
   login: string;
   user: User;
   inFavorites: boolean = false;

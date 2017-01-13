@@ -2,13 +2,13 @@ import { Component } from '@angular/core';
 import { NavController, ToastController } from 'ionic-angular';
 
 import { FavoriteUsers } from "../../providers/favorite-users";
-import { UserDetailsPage } from '../user-details/user-details';
+import { UserDetailsPageComponent } from '../user-details/user-details';
 
 @Component({
-  selector: 'page-favorite-users',
+  selector: 'sg-page-favorite-users',
   templateUrl: 'favorite-users.html'
 })
-export class FavoriteUsersPage {
+export class FavoriteUsersPageComponent {
   public users: Array<Object>;
 
   constructor(
@@ -33,6 +33,6 @@ export class FavoriteUsersPage {
   }
 
   goToDetails(login: string) {
-    this.navCtrl.push(UserDetailsPage, {login});
+    this.navCtrl.push(UserDetailsPageComponent, {login});
   }
 }

@@ -2,8 +2,8 @@ import { Component, ViewChild } from '@angular/core';
 import { Platform, MenuController, Nav } from 'ionic-angular';
 import { StatusBar } from 'ionic-native';
 
-import { SearchUsersPage } from '../pages/search-users/search-users';
-import { FavoriteUsersPage } from '../pages/favorite-users/favorite-users';
+import { SearchUsersPageComponent } from '../pages/search-users/search-users';
+import { FavoriteUsersPageComponent } from '../pages/favorite-users/favorite-users';
 
 @Component({
   templateUrl: 'app.html'
@@ -11,7 +11,7 @@ import { FavoriteUsersPage } from '../pages/favorite-users/favorite-users';
 export class MyAppComponent {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = SearchUsersPage;
+  rootPage: any = SearchUsersPageComponent;
   pages: Array<{title: string, component: any}>;
 
   constructor(
@@ -21,8 +21,8 @@ export class MyAppComponent {
     this.initializeApp();
 
     this.pages = [
-      { title: 'Search Users', component: SearchUsersPage },
-      { title: 'Favorite Users', component: FavoriteUsersPage }
+      { title: 'Search Users', component: SearchUsersPageComponent },
+      { title: 'Favorite Users', component: FavoriteUsersPageComponent }
     ];
   }
 

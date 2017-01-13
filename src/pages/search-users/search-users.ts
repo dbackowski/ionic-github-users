@@ -3,13 +3,13 @@ import { NavController, LoadingController, ToastController } from 'ionic-angular
 
 import { User } from './../../models/user';
 import { Users } from './../../providers/users';
-import { UserDetailsPage } from './../user-details/user-details';
+import { UserDetailsPageComponent } from './../user-details/user-details';
 
 @Component({
-  selector: 'page-users',
+  selector: 'sg-page-users',
   templateUrl: 'search-users.html'
 })
-export class SearchUsersPage {
+export class SearchUsersPageComponent {
   users: User[]
 
   constructor(
@@ -20,7 +20,7 @@ export class SearchUsersPage {
   ) {}
 
   goToDetails(login: string) {
-    this.navCtrl.push(UserDetailsPage, {login});
+    this.navCtrl.push(UserDetailsPageComponent, {login});
   }
 
   search(searchEvent) {
