@@ -12,7 +12,7 @@ export class MyAppComponent {
   @ViewChild(Nav) nav: Nav;
 
   rootPage: any = SearchUsersPageComponent;
-  pages: Array<{title: string, component: any}>;
+  pages: Array<{title: string, component: any, icon: string}>;
 
   constructor(
     public platform: Platform,
@@ -21,8 +21,8 @@ export class MyAppComponent {
     this.initializeApp();
 
     this.pages = [
-      { title: 'Search Users', component: SearchUsersPageComponent },
-      { title: 'Favorite Users', component: FavoriteUsersPageComponent }
+      { title: 'Search Users', component: SearchUsersPageComponent, icon: 'search' },
+      { title: 'Favorite Users', component: FavoriteUsersPageComponent, icon: 'bookmark' }
     ];
   }
 
