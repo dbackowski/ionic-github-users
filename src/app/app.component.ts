@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { Platform, MenuController, Nav } from 'ionic-angular';
-import { StatusBar } from 'ionic-native';
+import { StatusBar, Splashscreen } from 'ionic-native';
 
 import { SearchUsersPageComponent } from '../pages/search-users/search-users';
 import { FavoriteUsersPageComponent } from '../pages/favorite-users/favorite-users';
@@ -30,6 +30,7 @@ export class MyAppComponent {
     this.platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
+      Splashscreen.hide();
       StatusBar.styleDefault();
     });
   }
