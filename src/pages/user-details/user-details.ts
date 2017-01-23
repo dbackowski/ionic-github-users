@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, ToastController } from 'ionic-angular';
+import { NavController, NavParams, ToastController, LoadingController } from 'ionic-angular';
 
 import { User } from '../../models/user';
 import { Users } from '../../providers/users';
@@ -20,19 +20,27 @@ export class UserDetailsPageComponent {
     private Users: Users,
     private favoriteUsers: FavoriteUsers,
     private toastCtrl: ToastController,
+    private loadingCtrl: LoadingController
   ) {
     this.login = navParams.get('login');
   }
 
   ionViewDidLoad() {
-    this.Users.loadDetails(this.login).subscribe(user => {
-      this.user = user;
+    let loading = this.loadingCtrl.create({
+      content: 'Please wait...'
     });
 
-    this.favoriteUsers.load().subscribe((users) => {
-      if (users) {
-        this.inFavorites = users.filter((user) => user.login == this.login).length > 0;
-      }
+    loading.present().then(() => {
+      this.Users.loadDetails(this.login).subscribe(user => {
+        this.user = user;
+        loading.dismiss();
+      });
+
+      this.favoriteUsers.load().subscribe((users) => {
+        if (users) {
+          this.inFavorites = users.filter((user) => user.login == this.login).length > 0;
+        }
+      });
     });
   }
 

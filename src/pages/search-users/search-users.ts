@@ -31,23 +31,23 @@ export class SearchUsersPageComponent {
         content: 'Please wait...'
       });
 
-      loading.present();
+      loading.present().then(() => {
+        this.Users.searchUsers(term).subscribe(
+          users => {
+            this.users = users
+            loading.dismiss();
+          },
+          error => {
+            this.toastCtrl.create({
+              message: 'API response error.',
+              duration: 3000,
+              position: 'bottom'
+            }).present();
 
-      this.Users.searchUsers(term).subscribe(
-        users => {
-          this.users = users
-          loading.dismiss();
-        },
-        error => {
-          this.toastCtrl.create({
-            message: 'API response error.',
-            duration: 3000,
-            position: 'bottom'
-          }).present();
-
-          loading.dismiss();
-        }
-      );
+            loading.dismiss();
+          }
+        );
+      });
     }
   }
 }

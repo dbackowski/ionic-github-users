@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, ToastController } from 'ionic-angular';
+import { NavController, ToastController, LoadingController } from 'ionic-angular';
 
 import { FavoriteUsers } from "../../providers/favorite-users";
 import { UserDetailsPageComponent } from '../user-details/user-details';
@@ -14,22 +14,33 @@ export class FavoriteUsersPageComponent {
   constructor(
     public navCtrl: NavController, 
     private favoriteUsers: FavoriteUsers, 
-    private toastCtrl: ToastController
+    private toastCtrl: ToastController,
+    private loadingCtrl: LoadingController
   ) {}
 
   ionViewDidEnter() {
-    this.favoriteUsers.load().subscribe(
-      (users) => {
-        this.users = users;
-      },
-      (error) => {
-        this.toastCtrl.create({
-          message: 'Error occured.',
-          duration: 3000,
-          position: 'bottom'
-        }).present();
-      }
-    );
+    let loading = this.loadingCtrl.create({
+      content: 'Please wait...'
+    });
+
+    loading.present().then(() => {
+      this.favoriteUsers.load().finally(
+        () => {
+          loading.dismiss();
+        }
+      ).subscribe(
+        (users) => {
+          this.users = users;
+        },
+        (error) => {
+          this.toastCtrl.create({
+            message: 'Error occured.',
+            duration: 3000,
+            position: 'bottom'
+          }).present();
+        }
+      );
+    });
   }
 
   goToDetails(login: string) {
