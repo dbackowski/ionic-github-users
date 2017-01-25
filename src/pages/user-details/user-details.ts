@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, ToastController, LoadingController } from 'ionic-angular';
+import { Observable } from 'rxjs/Rx'
 
 import { User } from '../../models/user';
 import { Users } from '../../providers/users';
@@ -31,16 +32,21 @@ export class UserDetailsPageComponent {
     });
 
     loading.present().then(() => {
-      this.Users.loadDetails(this.login).subscribe(user => {
-        this.user = user;
-        loading.dismiss();
-      });
+      let toLoad = [this.Users.loadDetails(this.login), this.favoriteUsers.load()];
 
-      this.favoriteUsers.load().subscribe((users) => {
-        if (users) {
-          this.inFavorites = users.filter((user) => user.login == this.login).length > 0;
+      Observable.forkJoin(toLoad).finally(
+        () => {
+          loading.dismiss();
         }
-      });
+      ).subscribe(
+        (resources) => {
+          this.user = resources[0];
+
+          if (resources[1]) {
+            this.inFavorites = resources[1].filter((user) => user.login == this.login).length > 0;
+          }
+        }
+      );
     });
   }
 
