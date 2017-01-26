@@ -3,13 +3,14 @@ import { NavController, ToastController, LoadingController } from 'ionic-angular
 
 import { FavoriteUsers } from "../../providers/favorite-users";
 import { UserDetailsPageComponent } from '../user-details/user-details';
+import { FavoriteUser } from "../../models/favorite-user";
 
 @Component({
   selector: 'sg-page-favorite-users',
   templateUrl: 'favorite-users.html'
 })
 export class FavoriteUsersPageComponent {
-  public users: Array<Object>;
+  public users: FavoriteUser[];
 
   constructor(
     public navCtrl: NavController, 
