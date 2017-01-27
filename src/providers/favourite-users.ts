@@ -3,7 +3,7 @@ import { Storage } from '@ionic/storage';
 import { Observable } from 'rxjs/Rx'
 
 @Injectable()
-export class FavoriteUsers {
+export class FavouriteUsers {
   constructor(private storage: Storage) {}
 
   public load(): Observable<any> {

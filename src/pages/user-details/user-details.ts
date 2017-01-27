@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, ToastController, LoadingController } from 'ionic-angular';
+import { Events, NavController, NavParams, ToastController, LoadingController } from 'ionic-angular';
 import { Observable } from 'rxjs/Rx'
 
 import { User } from '../../models/user';
 import { Users } from '../../providers/users';
-import { FavoriteUsers } from "../../providers/favorite-users";
+import { FavouriteUsers } from "../../providers/favourite-users";
 
 @Component({
   selector: 'sg-page-user-details',
@@ -13,15 +13,16 @@ import { FavoriteUsers } from "../../providers/favorite-users";
 export class UserDetailsPageComponent {
   login: string;
   user: User;
-  inFavorites: boolean = false;
+  inFavourites: boolean = false;
 
   constructor(
     public navCtrl: NavController, 
     private navParams: NavParams, 
     private Users: Users,
-    private favoriteUsers: FavoriteUsers,
+    private favouriteUsers: FavouriteUsers,
     private toastCtrl: ToastController,
-    private loadingCtrl: LoadingController
+    private loadingCtrl: LoadingController,
+    private events: Events,
   ) {
     this.login = navParams.get('login');
   }
@@ -32,7 +33,7 @@ export class UserDetailsPageComponent {
     });
 
     loading.present().then(() => {
-      let toLoad = [this.Users.loadDetails(this.login), this.favoriteUsers.load()];
+      let toLoad = [this.Users.loadDetails(this.login), this.favouriteUsers.load()];
 
       Observable.forkJoin(toLoad).finally(
         () => {
@@ -43,19 +44,20 @@ export class UserDetailsPageComponent {
           this.user = resources[0];
 
           if (resources[1]) {
-            this.inFavorites = resources[1].filter((user) => user.login == this.login).length > 0;
+            this.inFavourites = resources[1].filter((user) => user.login == this.login).length > 0;
           }
         }
       );
     });
   }
 
-  public addToFavorites(login: string, avatarUrl: string) {
-    this.favoriteUsers.add(login, avatarUrl).subscribe(() => {
-      this.inFavorites = true;
-
+  public addToFavourites(login: string, avatarUrl: string) {
+    this.favouriteUsers.add(login, avatarUrl).subscribe(() => {
+      this.inFavourites = true;
+      this.publishFavouriteUsersRefreshEvent();
+      
       this.toastCtrl.create({
-          message: 'User added to favorites.',
+          message: 'User added to favourites.',
           duration: 3000,
           position: 'bottom'
         }).present();
@@ -63,15 +65,20 @@ export class UserDetailsPageComponent {
     );
   }
 
-  public removeFromFavorites(login: string) {
-    this.favoriteUsers.delete(login).subscribe(() => {
-      this.inFavorites = false;
-      
+  public removeFromFavourites(login: string) {
+    this.favouriteUsers.delete(login).subscribe(() => {
+      this.inFavourites = false;
+      this.publishFavouriteUsersRefreshEvent();
+
       this.toastCtrl.create({
-          message: 'User removed from favorites.',
+          message: 'User removed from favourites.',
           duration: 3000,
           position: 'bottom'
         }).present();
     });
+  }
+
+  private publishFavouriteUsersRefreshEvent() {
+    this.events.publish('favourite-users:refresh');
   }
 }

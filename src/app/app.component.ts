@@ -3,7 +3,7 @@ import { Platform, MenuController, Nav } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 
 import { SearchUsersPageComponent } from '../pages/search-users/search-users';
-import { FavoriteUsersPageComponent } from '../pages/favorite-users/favorite-users';
+import { FavouriteUsersPageComponent } from '../pages/favourite-users/favourite-users';
 
 @Component({
   templateUrl: 'app.html'
@@ -22,7 +22,7 @@ export class MyAppComponent {
 
     this.pages = [
       { title: 'Search Users', component: SearchUsersPageComponent, icon: 'search' },
-      { title: 'Favorite Users', component: FavoriteUsersPageComponent, icon: 'bookmark' }
+      { title: 'Favourite Users', component: FavouriteUsersPageComponent, icon: 'bookmark' }
     ];
   }
 

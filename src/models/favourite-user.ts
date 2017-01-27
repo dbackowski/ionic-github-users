@@ -1,4 +1,4 @@
-export interface FavoriteUser {
+export interface FavouriteUser {
   login: string;
   avatarUrl: string;
 }

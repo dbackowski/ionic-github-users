@@ -4,16 +4,16 @@ import { Storage } from '@ionic/storage';
 
 import { MyAppComponent } from './app.component';
 import { SearchUsersPageComponent } from '../pages/search-users/search-users';
-import { FavoriteUsersPageComponent } from '../pages/favorite-users/favorite-users';
+import { FavouriteUsersPageComponent } from '../pages/favourite-users/favourite-users';
 import { UserDetailsPageComponent } from '../pages/user-details/user-details';
 import { Users } from '../providers/users';
-import { FavoriteUsers } from '../providers/favorite-users';
+import { FavouriteUsers } from '../providers/favourite-users';
 
 @NgModule({
   declarations: [
     MyAppComponent,
     SearchUsersPageComponent,
-    FavoriteUsersPageComponent,
+    FavouriteUsersPageComponent,
     UserDetailsPageComponent  
   ],
   imports: [
@@ -23,9 +23,9 @@ import { FavoriteUsers } from '../providers/favorite-users';
   entryComponents: [
     MyAppComponent,
     SearchUsersPageComponent,
-    FavoriteUsersPageComponent,
+    FavouriteUsersPageComponent,
     UserDetailsPageComponent  
   ],
-  providers: [Users, FavoriteUsers, Storage]
+  providers: [Users, FavouriteUsers, Storage]
 })
 export class AppModule {}
