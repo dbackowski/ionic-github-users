@@ -10,6 +10,7 @@
       <button ion-item *ngFor="let page of pages" (click)="openPage(page)">
         <ion-icon [name]="page.icon"></ion-icon>
         {{ page.title }}
+        <ion-badge *ngIf="page.hasOwnProperty('count') && page.count" item-right>{{ page.count }}</ion-badge>
       </button>
     </ion-list>
   </ion-content>

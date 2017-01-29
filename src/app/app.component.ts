@@ -1,9 +1,10 @@
 import { Component, ViewChild } from '@angular/core';
-import { Platform, MenuController, Nav } from 'ionic-angular';
+import { Events, Platform, MenuController, Nav } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 
 import { SearchUsersPageComponent } from '../pages/search-users/search-users';
 import { FavouriteUsersPageComponent } from '../pages/favourite-users/favourite-users';
+import { FavouriteUsers } from '../providers/favourite-users';
 
 @Component({
   templateUrl: 'app.html'
@@ -12,18 +13,32 @@ export class MyAppComponent {
   @ViewChild(Nav) nav: Nav;
 
   rootPage: any = SearchUsersPageComponent;
-  pages: Array<{title: string, component: any, icon: string}>;
+  pages: Array<{title: string, component: any, icon: string, count?: any}>;
 
   constructor(
     public platform: Platform,
-    public menu: MenuController
+    public menu: MenuController,
+    private favouriteUsers: FavouriteUsers,
+    private events: Events,
   ) {
     this.initializeApp();
-
+    
     this.pages = [
       { title: 'Search Users', component: SearchUsersPageComponent, icon: 'search' },
       { title: 'Favourite Users', component: FavouriteUsersPageComponent, icon: 'bookmark' }
     ];
+
+    this.events.subscribe('favourite-users:refresh', () => {
+      this.favoriteUserCountRefresh();
+    });
+  }
+
+  favoriteUserCountRefresh() {
+    this.favouriteUsers.count().subscribe(
+      (count) => {
+        this.pages[1].count = count;
+      }
+    );
   }
 
   initializeApp() {
@@ -32,6 +47,7 @@ export class MyAppComponent {
       // Here you can do any higher level native things you might need.
       Splashscreen.hide();
       StatusBar.styleDefault();
+      this.favoriteUserCountRefresh();
     });
   }
 
