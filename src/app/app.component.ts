@@ -5,6 +5,7 @@ import { StatusBar, Splashscreen } from 'ionic-native';
 import { SearchUsersPageComponent } from '../pages/search-users/search-users';
 import { FavouriteUsersPageComponent } from '../pages/favourite-users/favourite-users';
 import { FavouriteUsers } from '../providers/favourite-users';
+import { Page } from '../models/page';
 
 @Component({
   templateUrl: 'app.html'
@@ -13,7 +14,7 @@ export class MyAppComponent {
   @ViewChild(Nav) nav: Nav;
 
   rootPage: any = SearchUsersPageComponent;
-  pages: Array<{title: string, component: any, icon: string, count?: any}>;
+  pages: Page[];
 
   constructor(
     public platform: Platform,
