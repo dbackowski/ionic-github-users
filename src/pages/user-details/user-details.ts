@@ -28,27 +28,7 @@ export class UserDetailsPageComponent {
   }
 
   ionViewDidLoad() {
-    let loading = this.loadingCtrl.create({
-      content: 'Please wait...'
-    });
-
-    loading.present().then(() => {
-      let toLoad = [this.Users.loadDetails(this.login), this.favouriteUsers.load()];
-
-      Observable.forkJoin(toLoad).finally(
-        () => {
-          loading.dismiss();
-        }
-      ).subscribe(
-        (resources) => {
-          this.user = resources[0];
-
-          if (resources[1]) {
-            this.inFavourites = resources[1].filter((user) => user.login == this.login).length > 0;
-          }
-        }
-      );
-    });
+    this.loadUser();
   }
 
   public addToFavourites(login: string, avatarUrl: string) {
@@ -80,5 +60,29 @@ export class UserDetailsPageComponent {
 
   private publishFavouriteUsersRefreshEvent() {
     this.events.publish('favourite-users:refresh');
+  }
+
+  private loadUser() {
+    let loading = this.loadingCtrl.create({
+      content: 'Please wait...'
+    });
+
+    loading.present().then(() => {
+      let toLoad = [this.Users.loadDetails(this.login), this.favouriteUsers.load()];
+
+      Observable.forkJoin(toLoad).finally(
+        () => {
+          loading.dismiss();
+        }
+      ).subscribe(
+        (resources) => {
+          this.user = resources[0];
+
+          if (resources[1]) {
+            this.inFavourites = resources[1].find((user) => user.login == this.login);
+          }
+        }
+      );
+    });
   }
 }
