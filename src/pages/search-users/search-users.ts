@@ -32,10 +32,13 @@ export class SearchUsersPageComponent {
       });
 
       loading.present().then(() => {
-        this.Users.searchUsers(term).subscribe(
+        this.Users.searchUsers(term).finally(
+          () => {
+            loading.dismiss();
+          }
+        ).subscribe(
           users => {
             this.users = users
-            loading.dismiss();
           },
           error => {
             this.toastCtrl.create({
@@ -43,8 +46,6 @@ export class SearchUsersPageComponent {
               duration: 3000,
               position: 'bottom'
             }).present();
-
-            loading.dismiss();
           }
         );
       });
