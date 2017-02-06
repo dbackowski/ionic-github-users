@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
-import { Events, Platform, MenuController, Nav } from 'ionic-angular';
+import { Events, Platform, MenuController, Nav, AlertController } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
+import { Network } from 'ionic-native';
 
 import { SearchUsersPageComponent } from '../pages/search-users/search-users';
 import { FavouriteUsersPageComponent } from '../pages/favourite-users/favourite-users';
@@ -15,12 +16,15 @@ export class MyAppComponent {
 
   rootPage: any = SearchUsersPageComponent;
   pages: Page[];
-
+  
+  private networkDisconnected: boolean = false;
+  
   constructor(
     public platform: Platform,
     public menu: MenuController,
     private favouriteUsers: FavouriteUsers,
     private events: Events,
+    private alertCtrl: AlertController,
   ) {
     this.initializeApp();
     
@@ -32,6 +36,15 @@ export class MyAppComponent {
     this.events.subscribe('favourite-users:refresh', () => {
       this.favoriteUserCountRefresh();
     });
+
+    Network.onDisconnect().subscribe(() => {
+      this.showNetworkAlert();
+      this.networkDisconnected = true;
+    });
+
+    Network.onConnect().subscribe(() => {
+      this.networkDisconnected = false;
+    });
   }
 
   favoriteUserCountRefresh() {
@@ -40,6 +53,24 @@ export class MyAppComponent {
         this.pages[1].count = count;
       }
     );
+  }
+
+  showNetworkAlert() {
+    let networkAlert = this.alertCtrl.create({
+      title: 'No Internet Connection',
+      message: 'Please check your internet connection.',
+      buttons: [
+        {
+          text: 'OK',
+          handler: () => {
+            if (this.networkDisconnected) {
+              this.showNetworkAlert();
+            }
+          }
+        },
+       ]
+    });
+    networkAlert.present();
   }
 
   initializeApp() {
