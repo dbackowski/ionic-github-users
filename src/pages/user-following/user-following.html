@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-navbar>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let follow of following">
+      <ion-avatar item-left>
+        <img [src]="follow.avatar_url">
+      </ion-avatar>
+      <h2>{{ follow.login }}</h2>
+    </ion-item>
+  </ion-list>
+  <div *ngIf="following && following.length == 0">
+    No following
+  </div>
+</ion-content>

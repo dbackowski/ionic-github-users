@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-navbar>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let repo of repos" text-wrap>
+      <h2>{{ repo.name }}</h2>
+      <p>{{ repo.description }}</p>
+    </ion-item>
+  </ion-list>
+  <div *ngIf="repos && repos.length == 0">
+    No repos
+  </div>
+</ion-content>

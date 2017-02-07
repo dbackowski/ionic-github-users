@@ -4,6 +4,13 @@
   </ion-navbar>
 </ion-header>
 
+<ion-tabs>
+  <ion-tab [root]="tab1Root" tabTitle="Followers" tabIcon="home" [rootParams]="login"></ion-tab>
+  <ion-tab [root]="tab2Root" tabTitle="Following" tabIcon="information-circle" [rootParams]="login"></ion-tab>
+  <ion-tab [root]="tab3Root" tabTitle="Repos" tabIcon="contacts" [rootParams]="login"></ion-tab>
+  <ion-tab [root]="tab1Root" tabTitle="Gists" tabIcon="home"></ion-tab>
+</ion-tabs>
+<!--
 <ion-content padding>
   <div *ngIf="user">
     <ion-list>
@@ -29,3 +36,4 @@
     <button ion-button block *ngIf="inFavourites" (click)="removeFromFavourites(login)">Remove from favourites</button>
   </div>
 </ion-content>
+-->

@@ -8,13 +8,19 @@ import { FavouriteUsersPageComponent } from '../pages/favourite-users/favourite-
 import { UserDetailsPageComponent } from '../pages/user-details/user-details';
 import { Users } from '../providers/users';
 import { FavouriteUsers } from '../providers/favourite-users';
+import { UserFollowersPageComponent } from '../pages/user-followers/user-followers';
+import { UserFollowingPageComponent } from '../pages/user-following/user-following';
+import { UserReposPageComponent } from '../pages/user-repos/user-repos';
 
 @NgModule({
   declarations: [
     MyAppComponent,
     SearchUsersPageComponent,
     FavouriteUsersPageComponent,
-    UserDetailsPageComponent  
+    UserDetailsPageComponent,
+    UserFollowersPageComponent,
+    UserFollowingPageComponent,
+    UserReposPageComponent,
   ],
   imports: [
     IonicModule.forRoot(MyAppComponent)
@@ -24,7 +30,10 @@ import { FavouriteUsers } from '../providers/favourite-users';
     MyAppComponent,
     SearchUsersPageComponent,
     FavouriteUsersPageComponent,
-    UserDetailsPageComponent  
+    UserDetailsPageComponent,
+    UserFollowersPageComponent,
+    UserFollowingPageComponent,
+    UserReposPageComponent,
   ],
   providers: [Users, FavouriteUsers, Storage]
 })
