@@ -5,6 +5,9 @@ import { Observable } from 'rxjs/Rx'
 import { User } from '../../models/user';
 import { Users } from '../../providers/users';
 import { FavouriteUsers } from "../../providers/favourite-users";
+import { UserFollowersPageComponent } from '../user-followers/user-followers';
+import { UserFollowingPageComponent } from '../user-following/user-following';
+import { UserReposPageComponent } from '../user-repos/user-repos';
 
 @Component({
   selector: 'sg-page-user-details',
@@ -14,6 +17,10 @@ export class UserDetailsPageComponent {
   login: string;
   user: User;
   inFavourites: boolean = false;
+
+  tab1Root: any = UserFollowersPageComponent;
+  tab2Root: any = UserFollowingPageComponent;
+  tab3Root: any = UserReposPageComponent;
 
   constructor(
     public navCtrl: NavController, 
