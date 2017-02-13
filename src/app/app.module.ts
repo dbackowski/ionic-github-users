@@ -11,6 +11,7 @@ import { FavouriteUsers } from '../providers/favourite-users';
 import { UserFollowersPageComponent } from '../pages/user-followers/user-followers';
 import { UserFollowingPageComponent } from '../pages/user-following/user-following';
 import { UserReposPageComponent } from '../pages/user-repos/user-repos';
+import { UserOverviewPageComponent } from '../pages/user-overview/user-overview';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { UserReposPageComponent } from '../pages/user-repos/user-repos';
     UserFollowersPageComponent,
     UserFollowingPageComponent,
     UserReposPageComponent,
+    UserOverviewPageComponent,
   ],
   imports: [
     IonicModule.forRoot(MyAppComponent)
@@ -34,6 +36,7 @@ import { UserReposPageComponent } from '../pages/user-repos/user-repos';
     UserFollowersPageComponent,
     UserFollowingPageComponent,
     UserReposPageComponent,
+    UserOverviewPageComponent,
   ],
   providers: [Users, FavouriteUsers, Storage]
 })

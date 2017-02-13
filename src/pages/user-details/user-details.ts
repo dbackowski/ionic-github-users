@@ -8,6 +8,7 @@ import { FavouriteUsers } from "../../providers/favourite-users";
 import { UserFollowersPageComponent } from '../user-followers/user-followers';
 import { UserFollowingPageComponent } from '../user-following/user-following';
 import { UserReposPageComponent } from '../user-repos/user-repos';
+import { UserOverviewPageComponent } from '../user-overview/user-overview';
 
 @Component({
   selector: 'sg-page-user-details',
@@ -18,9 +19,10 @@ export class UserDetailsPageComponent {
   user: User;
   inFavourites: boolean = false;
 
-  tab1Root: any = UserFollowersPageComponent;
-  tab2Root: any = UserFollowingPageComponent;
-  tab3Root: any = UserReposPageComponent;
+  tab1Root: any = UserOverviewPageComponent;
+  tab2Root: any = UserFollowersPageComponent;
+  tab3Root: any = UserFollowingPageComponent;
+  tab4Root: any = UserReposPageComponent;
 
   constructor(
     public navCtrl: NavController, 
