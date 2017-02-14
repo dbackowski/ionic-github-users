@@ -1,10 +1,10 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>{{login}} details</ion-title>
+    <ion-title>{{ login }}</ion-title>
   </ion-navbar>
 </ion-header>
-<ion-tabs >
-  <ion-tab [root]="tab1Root" tabTitle="Overview" [rootParams]="user"></ion-tab>
+<ion-tabs>
+  <ion-tab [root]="tab1Root" tabTitle="Overview" [rootParams]="login"></ion-tab>
   <ion-tab [root]="tab2Root" tabTitle="Followers" [rootParams]="login"></ion-tab>
   <ion-tab [root]="tab3Root" tabTitle="Following" [rootParams]="login"></ion-tab>
   <ion-tab [root]="tab4Root" tabTitle="Repos" [rootParams]="login"></ion-tab>
