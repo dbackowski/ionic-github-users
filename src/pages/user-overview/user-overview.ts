@@ -4,7 +4,6 @@ import { Observable } from 'rxjs/Rx'
 
 import { User } from '../../models/user';
 import { FavouriteUsers } from "../../providers/favourite-users";
-import { Users } from '../../providers/users';
 
 @Component({
   selector: 'sg-page-user-overview',
@@ -22,12 +21,9 @@ export class UserOverviewPageComponent {
     private toastCtrl: ToastController,
     private loadingCtrl: LoadingController,
     private events: Events,
-    private users: Users,
-  ) {}
-
-  ionViewDidLoad() {
-    this.login = this.navParams.data;
-    this.loadUser();
+  ) {
+    this.user = this.navParams.data.user;
+    this.inFavourites = this.navParams.data.inFavourites;
   }
 
   public addToFavourites(login: string, avatarUrl: string) {
@@ -59,29 +55,5 @@ export class UserOverviewPageComponent {
 
   private publishFavouriteUsersRefreshEvent() {
     this.events.publish('favourite-users:refresh');
-  }
-
-  private loadUser() {
-    let loading = this.loadingCtrl.create({
-      content: 'Please wait...'
-    });
-
-    loading.present().then(() => {
-      let toLoad = [this.users.loadDetails(this.login), this.favouriteUsers.load()];
-
-      Observable.forkJoin(toLoad).finally(
-        () => {
-          loading.dismiss();
-        }
-      ).subscribe(
-        (resources) => {
-          this.user = resources[0];
-
-          if (resources[1]) {
-            this.inFavourites = resources[1].find((user) => user.login == this.login);
-          }
-        }
-      );
-    });
   }
 }
