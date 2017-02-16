@@ -8,6 +8,7 @@ import { UserReposPageComponent } from '../user-repos/user-repos';
 import { UserOverviewPageComponent } from '../user-overview/user-overview';
 import { FavouriteUsers } from "../../providers/favourite-users";
 import { Users } from '../../providers/users';
+import { User } from '../../models/user';
 
 @Component({
   selector: 'sg-page-user-details',
@@ -15,7 +16,7 @@ import { Users } from '../../providers/users';
 })
 export class UserDetailsPageComponent {
   login: string;
-  user: any;
+  user: User;
   inFavourites: boolean = false;
 
   tab1Root: any = UserOverviewPageComponent;

@@ -6,6 +6,6 @@ export interface User {
   public_repos: number;
   public_gists: number;
   followers: number;
-  followig: number;
+  following: number;
   created_at: string;
 }
