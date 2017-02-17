@@ -3,7 +3,7 @@
     <ion-title>{{ login }}</ion-title>
   </ion-navbar>
 </ion-header>
-<ion-tabs *ngIf="user">
+<ion-tabs *ngIf="user" #ionTabs [scrollable-tabs]="ionTabs" selectedIndex='0' tabsMode="md">
   <ion-tab [root]="tab1Root" tabTitle="Overview" [rootParams]="{'user': user, 'inFavourites': inFavourites}"></ion-tab>
   <ion-tab [root]="tab2Root" tabTitle="Followers" [rootParams]="login" [tabBadge]="user.followers"></ion-tab>
   <ion-tab [root]="tab3Root" tabTitle="Following" [rootParams]="login" [tabBadge]="user.following"></ion-tab>
