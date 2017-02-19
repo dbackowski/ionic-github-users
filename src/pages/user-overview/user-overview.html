@@ -15,8 +15,8 @@
       <strong>{{ user.login }}</strong>
     </h2>
     <div padding-top>
-      <p *ngIf="user.location">location: {{ user.location }}</p>
-      <p>joined: {{ user.created_at }}</p>
+      <p *ngIf="user.location"><strong>location:</strong> {{ user.location }}</p>
+      <p><strong>joined:</strong> {{ user.created_at }}</p>
     </div>
 
     <button ion-button block *ngIf="!inFavourites" (click)="addToFavourites(user.login, user.avatar_url)">Add to favourites</button>
