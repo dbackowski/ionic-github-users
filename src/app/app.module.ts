@@ -13,6 +13,7 @@ import { UserFollowingPageComponent } from '../pages/user-following/user-followi
 import { UserReposPageComponent } from '../pages/user-repos/user-repos';
 import { UserOverviewPageComponent } from '../pages/user-overview/user-overview';
 import { ScrollableTabs } from '../components/scrollable-tabs/scrollable-tabs';
+import { FormatDate } from '../pipes/format-date';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { ScrollableTabs } from '../components/scrollable-tabs/scrollable-tabs';
     UserReposPageComponent,
     UserOverviewPageComponent,
     ScrollableTabs,
+    FormatDate,
   ],
   imports: [
     IonicModule.forRoot(MyAppComponent)
