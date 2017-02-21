@@ -6,6 +6,7 @@ import { UserFollowersPageComponent } from '../user-followers/user-followers';
 import { UserFollowingPageComponent } from '../user-following/user-following';
 import { UserReposPageComponent } from '../user-repos/user-repos';
 import { UserOverviewPageComponent } from '../user-overview/user-overview';
+import { UserGistsPageComponent } from '../user-gists/user-gists';
 import { FavouriteUsers } from "../../providers/favourite-users";
 import { Users } from '../../providers/users';
 import { User } from '../../models/user';
@@ -23,6 +24,7 @@ export class UserDetailsPageComponent {
   tab2Root: any = UserFollowersPageComponent;
   tab3Root: any = UserFollowingPageComponent;
   tab4Root: any = UserReposPageComponent;
+  tab5Root: any = UserGistsPageComponent;
 
   constructor(
     public navCtrl: NavController, 

@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-navbar>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let gist of gists" text-wrap>
+      <h2>{{ gist.description }}</h2>
+      <p>{{ gist.created_at }}</p>
+    </ion-item>
+  </ion-list>
+  <div *ngIf="gists && gists.length == 0">
+    No gists
+  </div>
+</ion-content>

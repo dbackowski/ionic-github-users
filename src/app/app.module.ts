@@ -14,6 +14,7 @@ import { UserReposPageComponent } from '../pages/user-repos/user-repos';
 import { UserOverviewPageComponent } from '../pages/user-overview/user-overview';
 import { ScrollableTabs } from '../components/scrollable-tabs/scrollable-tabs';
 import { FormatDate } from '../pipes/format-date';
+import { UserGistsPageComponent } from '../pages/user-gists/user-gists';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { FormatDate } from '../pipes/format-date';
     UserOverviewPageComponent,
     ScrollableTabs,
     FormatDate,
+    UserGistsPageComponent,
   ],
   imports: [
     IonicModule.forRoot(MyAppComponent)
@@ -41,6 +43,7 @@ import { FormatDate } from '../pipes/format-date';
     UserFollowingPageComponent,
     UserReposPageComponent,
     UserOverviewPageComponent,
+    UserGistsPageComponent,
   ],
   providers: [Users, FavouriteUsers, Storage]
 })
