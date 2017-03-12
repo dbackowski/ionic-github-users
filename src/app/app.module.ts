@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { IonicApp, IonicModule } from 'ionic-angular';
-import { Storage } from '@ionic/storage';
+import { IonicStorageModule } from '@ionic/storage';
 
 import { MyAppComponent } from './app.component';
 import { SearchUsersPageComponent } from '../pages/search-users/search-users';
@@ -31,7 +31,8 @@ import { UserGistsPageComponent } from '../pages/user-gists/user-gists';
     UserGistsPageComponent,
   ],
   imports: [
-    IonicModule.forRoot(MyAppComponent)
+    IonicModule.forRoot(MyAppComponent),
+    IonicStorageModule.forRoot(),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -45,6 +46,6 @@ import { UserGistsPageComponent } from '../pages/user-gists/user-gists';
     UserOverviewPageComponent,
     UserGistsPageComponent,
   ],
-  providers: [Users, FavouriteUsers, Storage]
+  providers: [Users, FavouriteUsers]
 })
 export class AppModule {}
