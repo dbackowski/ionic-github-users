@@ -8,6 +8,11 @@
     <ion-item *ngFor="let repo of repos" text-wrap>
       <h2>{{ repo.name }}</h2>
       <p>{{ repo.description }}</p>
+      <p>
+        <ion-icon name="star"></ion-icon>&nbsp;{{ repo.stargazers_count }}
+        <ion-icon name="git-branch"></ion-icon>&nbsp;{{ repo.forks }}
+      </p>
+      
     </ion-item>
   </ion-list>
   <div *ngIf="repos && repos.length == 0">
