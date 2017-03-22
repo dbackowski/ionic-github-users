@@ -15,4 +15,8 @@
   <div *ngIf="followers && followers.length == 0">
     No followers
   </div>
+
+  <ion-infinite-scroll (ionInfinite)="loadMore($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 </ion-content>

@@ -30,23 +30,23 @@ export class Users {
       .map(res => <User[]>(res.json().items));
   }
 
-  followers(login: string): Observable<Follower[]> {
-    return this.http.get(`${this.apiUrl}/users/${login}/followers`) 
+  followers(login: string, page: number = 1): Observable<Follower[]> {
+    return this.http.get(`${this.apiUrl}/users/${login}/followers?page=${page}`) 
       .map(res => <Follower[]>(res.json()));
   }
 
-  following(login: string): Observable<Following[]> {
-    return this.http.get(`${this.apiUrl}/users/${login}/following`) 
+  following(login: string, page: number = 1): Observable<Following[]> {
+    return this.http.get(`${this.apiUrl}/users/${login}/following?page=${page}`) 
       .map(res => <Following[]>(res.json()));
   }
 
-  repos(login: string): Observable<Repo[]> {
-    return this.http.get(`${this.apiUrl}/users/${login}/repos`) 
+  repos(login: string, page: number = 1): Observable<Repo[]> {
+    return this.http.get(`${this.apiUrl}/users/${login}/repos?page=${page}`) 
       .map(res => <Repo[]>(res.json()));
   }
 
-  gists(login: string): Observable<Gist[]> {
-    return this.http.get(`${this.apiUrl}/users/${login}/gists`)
+  gists(login: string, page: number = 1): Observable<Gist[]> {
+    return this.http.get(`${this.apiUrl}/users/${login}/gists?page=${page}`)
       .map(res => <Gist[]>(res.json()));
   }
 }

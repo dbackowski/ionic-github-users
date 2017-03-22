@@ -11,6 +11,7 @@ import { Users } from '../../providers/users';
 export class UserFollowingPageComponent {
   public following: Following[];
   private login: string;
+  private page: number = 1;
 
   constructor(
     public navCtrl: NavController, 
@@ -49,5 +50,21 @@ export class UserFollowingPageComponent {
         }
       );
     });
+  }
+
+  public loadMore(infiniteScroll) {
+    this.users.following(this.login, this.page + 1).finally(
+      () => {
+        infiniteScroll.complete();
+      }
+    ).subscribe(
+      (following) => {
+        following.forEach((follow) => {
+          this.following.push(follow);
+        })
+        
+        this.page += 1;
+      }
+    )
   }
 }

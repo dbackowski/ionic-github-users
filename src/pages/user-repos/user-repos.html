@@ -10,7 +10,7 @@
       <p>{{ repo.description }}</p>
       <p>
         <ion-icon name="star"></ion-icon>&nbsp;{{ repo.stargazers_count }}
-        <ion-icon name="git-branch"></ion-icon>&nbsp;{{ repo.forks }}
+        <ion-icon name="git-branch"></ion-icon>&nbsp;{{ repo.forks_count }}
       </p>
       
     </ion-item>
@@ -18,4 +18,8 @@
   <div *ngIf="repos && repos.length == 0">
     No repos
   </div>
+
+  <ion-infinite-scroll (ionInfinite)="loadMore($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 </ion-content>

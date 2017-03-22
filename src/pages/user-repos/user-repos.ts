@@ -11,6 +11,7 @@ import { Users } from '../../providers/users';
 export class UserReposPageComponent {
   public repos: Repo[];
   private login: string;
+  private page: number = 1;
 
   constructor(
     public navCtrl: NavController, 
@@ -49,5 +50,21 @@ export class UserReposPageComponent {
         }
       );
     });
+  }
+
+  public loadMore(infiniteScroll) {
+    this.users.repos(this.login, this.page + 1).finally(
+      () => {
+        infiniteScroll.complete();
+      }
+    ).subscribe(
+      (repos) => {
+        repos.forEach((repo) => {
+          this.repos.push(repo);
+        })
+        
+        this.page += 1;
+      }
+    )
   }
 }

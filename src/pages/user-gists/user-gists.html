@@ -13,4 +13,8 @@
   <div *ngIf="gists && gists.length == 0">
     No gists
   </div>
+
+  <ion-infinite-scroll (ionInfinite)="loadMore($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 </ion-content>

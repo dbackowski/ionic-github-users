@@ -11,6 +11,7 @@ import { Users } from '../../providers/users';
 export class UserGistsPageComponent {
   public gists: Gist[];
   private login: string;
+  private page: number = 1;
 
   constructor(
     public navCtrl: NavController, 
@@ -49,5 +50,21 @@ export class UserGistsPageComponent {
         }
       );
     });
+  }
+
+  public loadMore(infiniteScroll) {
+    this.users.gists(this.login, this.page + 1).finally(
+      () => {
+        infiniteScroll.complete();
+      }
+    ).subscribe(
+      (gists) => {
+        gists.forEach((gist) => {
+          this.gists.push(gist);
+        })
+        
+        this.page += 1;
+      }
+    )
   }
 }
