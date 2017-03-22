@@ -3,24 +3,23 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding fullscreen="true">
+  <ion-card *ngIf="user">
+    <ion-card-content>
+      <img [src]="user.avatar_url">
+      <h1>
+        <strong>{{ user.name }}</strong>
+      </h1>
+      <h2>
+        <strong>{{ user.login }}</strong>
+      </h2>
+      <div padding-top>
+        <p *ngIf="user.location"><strong>location:</strong> {{ user.location }}</p>
+        <p><strong>joined:</strong> {{ user.created_at | formatDate }}</p>
+      </div>
 
-<ion-card *ngIf="user">
-  <ion-card-content>
-    <img [src]="user.avatar_url">
-    <h1>
-      <strong>{{ user.name }}</strong>
-    </h1>
-    <h2>
-      <strong>{{ user.login }}</strong>
-    </h2>
-    <div padding-top>
-      <p *ngIf="user.location"><strong>location:</strong> {{ user.location }}</p>
-      <p><strong>joined:</strong> {{ user.created_at | formatDate }}</p>
-    </div>
-
-    <button ion-button block *ngIf="!inFavourites" (click)="addToFavourites(user.login, user.avatar_url)">Add to favourites</button>
-    <button ion-button block *ngIf="inFavourites" (click)="removeFromFavourites(user.login)">Remove from favourites</button>
-  </ion-card-content>
-</ion-card>
+      <button ion-button block *ngIf="!inFavourites" (click)="addToFavourites(user.login, user.avatar_url)">Add to favourites</button>
+      <button ion-button block *ngIf="inFavourites" (click)="removeFromFavourites(user.login)">Remove from favourites</button>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
