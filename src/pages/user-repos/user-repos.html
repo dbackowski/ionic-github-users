@@ -9,10 +9,10 @@
       <h2>{{ repo.name }}</h2>
       <p>{{ repo.description }}</p>
       <p>
+        <ion-badge>{{ repo.language }}</ion-badge>
         <ion-icon name="star"></ion-icon>&nbsp;{{ repo.stargazers_count }}
         <ion-icon name="git-branch"></ion-icon>&nbsp;{{ repo.forks_count }}
       </p>
-      
     </ion-item>
   </ion-list>
   <div *ngIf="repos && repos.length == 0">
