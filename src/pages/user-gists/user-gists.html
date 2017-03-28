@@ -7,7 +7,7 @@
   <ion-list>
     <ion-item *ngFor="let gist of gists" text-wrap>
       <h2>{{ gist.description }}</h2>
-      <p>{{ gist.created_at }}</p>
+      <p>{{ gist.created_at | formatDate }}</p>
     </ion-item>
   </ion-list>
   <div *ngIf="gists && gists.length == 0">
