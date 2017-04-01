@@ -12,7 +12,6 @@ import { UserFollowersPageComponent } from '../pages/user-followers/user-followe
 import { UserFollowingPageComponent } from '../pages/user-following/user-following';
 import { UserReposPageComponent } from '../pages/user-repos/user-repos';
 import { UserOverviewPageComponent } from '../pages/user-overview/user-overview';
-import { ScrollableTabs } from '../components/scrollable-tabs/scrollable-tabs';
 import { FormatDate } from '../pipes/format-date';
 import { UserGistsPageComponent } from '../pages/user-gists/user-gists';
 
@@ -26,7 +25,6 @@ import { UserGistsPageComponent } from '../pages/user-gists/user-gists';
     UserFollowingPageComponent,
     UserReposPageComponent,
     UserOverviewPageComponent,
-    ScrollableTabs,
     FormatDate,
     UserGistsPageComponent,
   ],
