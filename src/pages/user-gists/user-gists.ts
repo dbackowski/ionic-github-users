@@ -5,7 +5,7 @@ import { Gist } from '../../models/gist';
 import { Users } from '../../providers/users';
 
 @Component({
-  selector: 'sg-page-user-gists',
+  selector: 'page-user-gists',
   templateUrl: 'user-gists.html'
 })
 export class UserGistsPageComponent {

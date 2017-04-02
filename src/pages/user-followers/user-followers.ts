@@ -5,7 +5,7 @@ import { Follower } from '../../models/follower';
 import { Users } from '../../providers/users';
 
 @Component({
-  selector: 'sg-page-user-followers',
+  selector: 'page-user-followers',
   templateUrl: 'user-followers.html'
 })
 export class UserFollowersPageComponent {

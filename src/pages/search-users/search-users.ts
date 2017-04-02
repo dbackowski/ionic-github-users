@@ -6,7 +6,7 @@ import { Users } from './../../providers/users';
 import { UserDetailsPageComponent } from './../user-details/user-details';
 
 @Component({
-  selector: 'sg-page-users',
+  selector: 'page-users',
   templateUrl: 'search-users.html'
 })
 export class SearchUsersPageComponent {

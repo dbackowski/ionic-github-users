@@ -12,7 +12,7 @@ import { Users } from '../../providers/users';
 import { User } from '../../models/user';
 
 @Component({
-  selector: 'sg-page-user-details',
+  selector: 'page-user-details',
   templateUrl: 'user-details.html'
 })
 export class UserDetailsPageComponent {

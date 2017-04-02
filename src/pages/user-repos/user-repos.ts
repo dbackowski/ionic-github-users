@@ -5,7 +5,7 @@ import { Repo } from '../../models/repo';
 import { Users } from '../../providers/users';
 
 @Component({
-  selector: 'sg-page-user-repos',
+  selector: 'page-user-repos',
   templateUrl: 'user-repos.html'
 })
 export class UserReposPageComponent {

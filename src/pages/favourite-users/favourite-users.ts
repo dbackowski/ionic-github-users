@@ -6,7 +6,7 @@ import { UserDetailsPageComponent } from '../user-details/user-details';
 import { FavouriteUser } from "../../models/favourite-user";
 
 @Component({
-  selector: 'sg-page-favourite-users',
+  selector: 'page-favourite-users',
   templateUrl: 'favourite-users.html'
 })
 export class FavouriteUsersPageComponent {
