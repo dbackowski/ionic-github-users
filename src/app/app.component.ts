@@ -1,7 +1,8 @@
 import { Component, ViewChild } from '@angular/core';
 import { Events, Platform, MenuController, Nav, AlertController } from 'ionic-angular';
-import { StatusBar, Splashscreen } from 'ionic-native';
-import { Network } from 'ionic-native';
+import { StatusBar } from '@ionic-native/status-bar';
+import { SplashScreen } from '@ionic-native/splash-screen';
+import { Network } from '@ionic-native/network';
 
 import { SearchUsersPageComponent } from '../pages/search-users/search-users';
 import { FavouriteUsersPageComponent } from '../pages/favourite-users/favourite-users';
@@ -22,6 +23,9 @@ export class MyAppComponent {
   constructor(
     public platform: Platform,
     public menu: MenuController,
+    private splashScreen: SplashScreen,
+    private statusBar: StatusBar,
+    private network: Network,
     private favouriteUsers: FavouriteUsers,
     private events: Events,
     private alertCtrl: AlertController,
@@ -37,12 +41,12 @@ export class MyAppComponent {
       this.favoriteUserCountRefresh();
     });
 
-    Network.onDisconnect().subscribe(() => {
+    this.network.onDisconnect().subscribe(() => {
       this.showNetworkAlert();
       this.networkDisconnected = true;
     });
 
-    Network.onConnect().subscribe(() => {
+    this.network.onConnect().subscribe(() => {
       this.networkDisconnected = false;
     });
   }
@@ -77,8 +81,8 @@ export class MyAppComponent {
     this.platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
-      Splashscreen.hide();
-      StatusBar.styleDefault();
+      this.splashScreen.hide();
+      this.statusBar.styleDefault();
       this.favoriteUserCountRefresh();
     });
   }
