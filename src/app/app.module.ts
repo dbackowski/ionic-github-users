@@ -18,7 +18,6 @@ import { UserFollowingPageComponent } from '../pages/user-following/user-followi
 import { UserReposPageComponent } from '../pages/user-repos/user-repos';
 import { UserOverviewPageComponent } from '../pages/user-overview/user-overview';
 import { FormatDate } from '../pipes/format-date';
-import { UserGistsPageComponent } from '../pages/user-gists/user-gists';
 
 @NgModule({
   declarations: [
@@ -31,7 +30,6 @@ import { UserGistsPageComponent } from '../pages/user-gists/user-gists';
     UserReposPageComponent,
     UserOverviewPageComponent,
     FormatDate,
-    UserGistsPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,7 +47,6 @@ import { UserGistsPageComponent } from '../pages/user-gists/user-gists';
     UserFollowingPageComponent,
     UserReposPageComponent,
     UserOverviewPageComponent,
-    UserGistsPageComponent,
   ],
   providers: [Users, FavouriteUsers, SplashScreen, StatusBar, Network]
 })
