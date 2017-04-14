@@ -6,7 +6,7 @@ import { Network } from '@ionic-native/network';
 
 import { SearchUsersPageComponent } from '../pages/search-users/search-users';
 import { FavouriteUsersPageComponent } from '../pages/favourite-users/favourite-users';
-import { FavouriteUsers } from '../providers/favourite-users';
+import { FavouriteUsersProvider } from '../providers/favourite-users';
 import { Page } from '../models/page';
 
 @Component({
@@ -26,7 +26,7 @@ export class MyAppComponent {
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
     private network: Network,
-    private favouriteUsers: FavouriteUsers,
+    private favouriteUsersProvider: FavouriteUsersProvider,
     private events: Events,
     private alertCtrl: AlertController,
   ) {
@@ -52,7 +52,7 @@ export class MyAppComponent {
   }
 
   favoriteUserCountRefresh() {
-    this.favouriteUsers.count().subscribe(
+    this.favouriteUsersProvider.count().subscribe(
       (count) => {
         this.pages[1].count = count;
       }

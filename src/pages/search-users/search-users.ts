@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
-import { NavController, LoadingController, ToastController } from 'ionic-angular';
+import { NavController } from 'ionic-angular';
 
 import { User } from './../../models/user';
-import { Users } from './../../providers/users';
+import { UsersProvider } from './../../providers/users';
 import { UserDetailsPageComponent } from './../user-details/user-details';
+import { LoadingProvider } from '../../providers/loading';
+import { ToastProvider } from '../../providers/toast';
 
 @Component({
   selector: 'page-users',
@@ -14,9 +16,9 @@ export class SearchUsersPageComponent {
 
   constructor(
     public navCtrl: NavController, 
-    private Users: Users, 
-    private loadingCtrl: LoadingController,
-    private toastCtrl: ToastController
+    private usersProvider: UsersProvider, 
+    private loadingProvider: LoadingProvider,
+    private toastProvider: ToastProvider,
   ) {}
 
   goToDetails(login: string) {
@@ -27,28 +29,20 @@ export class SearchUsersPageComponent {
     let term = searchEvent.target.value
 
     if (term.trim().length >= 2) {
-      let loading = this.loadingCtrl.create({
-        content: 'Please wait...'
-      });
+      this.loadingProvider.show();
 
-      loading.present().then(() => {
-        this.Users.searchUsers(term).finally(
-          () => {
-            loading.dismiss();
-          }
-        ).subscribe(
-          users => {
-            this.users = users
-          },
-          error => {
-            this.toastCtrl.create({
-              message: 'API response error.',
-              duration: 3000,
-              position: 'bottom'
-            }).present();
-          }
-        );
-      });
+      this.usersProvider.searchUsers(term).finally(
+        () => {
+          this.loadingProvider.hide();
+        }
+      ).subscribe(
+        users => {
+          this.users = users
+        },
+        error => {
+          this.toastProvider.error('API response error.');
+        }
+      );
     }
   }
 }

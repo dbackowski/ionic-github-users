@@ -1,14 +1,16 @@
 import { Component } from '@angular/core';
-import { Events, NavController, NavParams, ToastController, LoadingController } from 'ionic-angular';
+import { Events, NavController, NavParams } from 'ionic-angular';
 import { Observable } from 'rxjs/Rx'
 
 import { UserFollowersPageComponent } from '../user-followers/user-followers';
 import { UserFollowingPageComponent } from '../user-following/user-following';
 import { UserReposPageComponent } from '../user-repos/user-repos';
 import { UserOverviewPageComponent } from '../user-overview/user-overview';
-import { FavouriteUsers } from '../../providers/favourite-users';
-import { Users } from '../../providers/users';
+import { FavouriteUsersProvider } from '../../providers/favourite-users';
+import { UsersProvider } from '../../providers/users';
 import { User } from '../../models/user';
+import { LoadingProvider } from '../../providers/loading';
+import { ToastProvider } from '../../providers/toast';
 
 @Component({
   selector: 'page-user-details',
@@ -27,11 +29,10 @@ export class UserDetailsPageComponent {
   constructor(
     public navCtrl: NavController, 
     private navParams: NavParams, 
-    private toastCtrl: ToastController,
-    private loadingCtrl: LoadingController,
     private events: Events,
-    private favouriteUsers: FavouriteUsers,
-    private users: Users,
+    private favouriteUsersProvider: FavouriteUsersProvider,
+    private usersProvider: UsersProvider, 
+    private loadingProvider: LoadingProvider,
   ) {
     this.login = this.navParams.get('login');
   }
@@ -41,26 +42,25 @@ export class UserDetailsPageComponent {
   }
 
   private loadUser() {
-    let loading = this.loadingCtrl.create({
-      content: 'Please wait...'
-    });
+    this.loadingProvider.show();
 
-    loading.present().then(() => {
-      let toLoad = [this.users.loadDetails(this.login), this.favouriteUsers.load()];
+    let toLoad = [
+      this.usersProvider.loadDetails(this.login), 
+      this.favouriteUsersProvider.load()
+    ];
 
-      Observable.forkJoin(toLoad).finally(
-        () => {
-          loading.dismiss();
+    Observable.forkJoin(toLoad).finally(
+      () => {
+        this.loadingProvider.hide();
+      }
+    ).subscribe(
+      (resources) => {
+        this.user = resources[0];
+
+        if (resources[1]) {
+          this.inFavourites = resources[1].find((user) => user.login == this.login);
         }
-      ).subscribe(
-        (resources) => {
-          this.user = resources[0];
-
-          if (resources[1]) {
-            this.inFavourites = resources[1].find((user) => user.login == this.login);
-          }
-        }
-      );
-    });
+      }
+    );
   }
 }

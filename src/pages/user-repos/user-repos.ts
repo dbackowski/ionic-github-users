@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 import { NavController, NavParams, LoadingController, ToastController } from 'ionic-angular';
 
 import { Repo } from '../../models/repo';
-import { Users } from '../../providers/users';
+import { UsersProvider } from '../../providers/users';
+import { LoadingProvider } from '../../providers/loading';
+import { ToastProvider } from '../../providers/toast';
 
 @Component({
   selector: 'page-user-repos',
@@ -16,9 +18,9 @@ export class UserReposPageComponent {
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
-    private users: Users,
-    private loadingCtrl: LoadingController,
-    private toastCtrl: ToastController,
+    private usersProvider: UsersProvider,
+    private loadingProvider: LoadingProvider,
+    private toastProvider: ToastProvider,
   ) {
     this.login = navParams.data;
   }
@@ -28,32 +30,24 @@ export class UserReposPageComponent {
   }
 
   public loadRepos() {
-    let loading = this.loadingCtrl.create({
-      content: 'Please wait...'
-    });
+    this.loadingProvider.show();
 
-    loading.present().then(() => {
-      this.users.repos(this.login).finally(
-        () => {
-          loading.dismiss();
-        }
-      ).subscribe(
-        (repos) => {
-          this.repos = repos;
-        },
-        (error) => {
-          this.toastCtrl.create({
-            message: 'API response error.',
-            duration: 3000,
-            position: 'bottom'
-          }).present();
-        }
-      );
-    });
+    this.usersProvider.repos(this.login).finally(
+      () => {
+        this.loadingProvider.hide();
+      }
+    ).subscribe(
+      (repos) => {
+        this.repos = repos;
+      },
+      (error) => {
+        this.toastProvider.error('API response error.');
+      }
+    );
   }
 
   public loadMore(infiniteScroll) {
-    this.users.repos(this.login, this.page + 1).finally(
+    this.usersProvider.repos(this.login, this.page + 1).finally(
       () => {
         infiniteScroll.complete();
       }

@@ -10,7 +10,7 @@ import { Repo } from '../models/repo';
 import { Gist } from '../models/gist';
 
 @Injectable()
-export class Users {
+export class UsersProvider {
   apiUrl = 'https://api.github.com';
 
   constructor(public http: Http) {}

@@ -11,13 +11,15 @@ import { MyAppComponent } from './app.component';
 import { SearchUsersPageComponent } from '../pages/search-users/search-users';
 import { FavouriteUsersPageComponent } from '../pages/favourite-users/favourite-users';
 import { UserDetailsPageComponent } from '../pages/user-details/user-details';
-import { Users } from '../providers/users';
-import { FavouriteUsers } from '../providers/favourite-users';
+import { UsersProvider } from '../providers/users';
+import { FavouriteUsersProvider } from '../providers/favourite-users';
 import { UserFollowersPageComponent } from '../pages/user-followers/user-followers';
 import { UserFollowingPageComponent } from '../pages/user-following/user-following';
 import { UserReposPageComponent } from '../pages/user-repos/user-repos';
 import { UserOverviewPageComponent } from '../pages/user-overview/user-overview';
 import { FormatDate } from '../pipes/format-date';
+import { LoadingProvider } from '../providers/loading';
+import { ToastProvider } from '../providers/toast';
 
 @NgModule({
   declarations: [
@@ -48,6 +50,14 @@ import { FormatDate } from '../pipes/format-date';
     UserReposPageComponent,
     UserOverviewPageComponent,
   ],
-  providers: [Users, FavouriteUsers, SplashScreen, StatusBar, Network]
+  providers: [
+    UsersProvider, 
+    FavouriteUsersProvider, 
+    SplashScreen, 
+    StatusBar, 
+    Network, 
+    LoadingProvider, 
+    ToastProvider
+  ]
 })
 export class AppModule {}

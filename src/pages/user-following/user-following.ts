@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, LoadingController, ToastController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 
 import { Following } from '../../models/following';
-import { Users } from '../../providers/users';
+import { UsersProvider } from '../../providers/users';
+import { LoadingProvider } from '../../providers/loading';
+import { ToastProvider } from '../../providers/toast';
 
 @Component({
   selector: 'page-user-following',
@@ -16,9 +18,9 @@ export class UserFollowingPageComponent {
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
-    private users: Users,
-    private loadingCtrl: LoadingController,
-    private toastCtrl: ToastController,
+    private usersProvider: UsersProvider,
+    private loadingProvider: LoadingProvider,
+    private toastProvider: ToastProvider,
   ) {
     this.login = navParams.data;
   }
@@ -28,32 +30,24 @@ export class UserFollowingPageComponent {
   }
 
   public loadFollowing() {
-    let loading = this.loadingCtrl.create({
-      content: 'Please wait...'
-    });
+    this.loadingProvider.show();
 
-    loading.present().then(() => {
-      this.users.following(this.login).finally(
-        () => {
-          loading.dismiss();
-        }
-      ).subscribe(
-        (following) => {
-          this.following = following;
-        },
-        (error) => {
-          this.toastCtrl.create({
-            message: 'API response error.',
-            duration: 3000,
-            position: 'bottom'
-          }).present();
-        }
-      );
-    });
+    this.usersProvider.following(this.login).finally(
+      () => {
+        this.loadingProvider.hide();
+      }
+    ).subscribe(
+      (following) => {
+        this.following = following;
+      },
+      (error) => {
+        this.toastProvider.error('API response error.');
+      }
+    );
   }
 
   public loadMore(infiniteScroll) {
-    this.users.following(this.login, this.page + 1).finally(
+    this.usersProvider.following(this.login, this.page + 1).finally(
       () => {
         infiniteScroll.complete();
       }

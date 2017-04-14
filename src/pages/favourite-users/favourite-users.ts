@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import { Events, NavController, ToastController, LoadingController } from 'ionic-angular';
 
-import { FavouriteUsers } from "../../providers/favourite-users";
+import { FavouriteUsersProvider } from '../../providers/favourite-users';
 import { UserDetailsPageComponent } from '../user-details/user-details';
-import { FavouriteUser } from "../../models/favourite-user";
+import { FavouriteUser } from '../../models/favourite-user';
+import { LoadingProvider } from '../../providers/loading';
+import { ToastProvider } from '../../providers/toast';
 
 @Component({
   selector: 'page-favourite-users',
@@ -14,9 +16,9 @@ export class FavouriteUsersPageComponent {
 
   constructor(
     public navCtrl: NavController, 
-    private favouriteUsers: FavouriteUsers, 
-    private toastCtrl: ToastController,
-    private loadingCtrl: LoadingController,
+    private favouriteUsersProvider: FavouriteUsersProvider, 
+    private loadingProvider: LoadingProvider,
+    private toastProvider: ToastProvider,
     private events: Events,
   ) {
     this.events.subscribe('favourite-users:refresh', () => {
@@ -33,30 +35,22 @@ export class FavouriteUsersPageComponent {
   }
 
   private loadfavouriteUsers() {
-    let loading = this.loadingCtrl.create({
-      content: 'Please wait ...'
-    });
-
-    loading.present().then(() => {
-      this.fetchFavouriteUsers(loading);
+    this.loadingProvider.show().then(() => {
+      this.fetchFavouriteUsers(this.loadingProvider);
     });
   }
 
   private fetchFavouriteUsers(loading = null) {
-    this.favouriteUsers.load().finally(
+    this.favouriteUsersProvider.load().finally(
       () => {
-        loading && loading.dismiss();
+        loading && loading.hide();
       }
     ).subscribe(
       (users) => {
         this.users = users;
       },
       (error) => {
-        this.toastCtrl.create({
-          message: 'Error occured.',
-          duration: 3000,
-          position: 'bottom'
-        }).present();
+        this.toastProvider.error('Error occured.');
       }
     );
   }
