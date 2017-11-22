@@ -17,9 +17,9 @@ export class MyAppComponent {
 
   rootPage: any = SearchUsersPageComponent;
   pages: Page[];
-  
+
   private networkDisconnected: boolean = false;
-  
+
   constructor(
     public platform: Platform,
     public menu: MenuController,
@@ -31,23 +31,23 @@ export class MyAppComponent {
     private alertCtrl: AlertController,
   ) {
     this.initializeApp();
-    
+
     this.pages = [
       { title: 'Search Users', component: SearchUsersPageComponent, icon: 'search' },
       { title: 'Favourite Users', component: FavouriteUsersPageComponent, icon: 'bookmark' }
     ];
 
-    this.events.subscribe('favourite-users:refresh', () => {
-      this.favoriteUserCountRefresh();
-    });
-
     this.network.onDisconnect().subscribe(() => {
-      this.showNetworkAlert();
+      this.noNetworkConnectionAlert();
       this.networkDisconnected = true;
     });
 
     this.network.onConnect().subscribe(() => {
       this.networkDisconnected = false;
+    });
+
+    this.events.subscribe('favourite-users:refresh', () => {
+      this.favoriteUserCountRefresh();
     });
   }
 
@@ -59,21 +59,22 @@ export class MyAppComponent {
     );
   }
 
-  showNetworkAlert() {
-    let networkAlert = this.alertCtrl.create({
-      title: 'No Internet Connection',
-      message: 'Please check your internet connection.',
+  private noNetworkConnectionAlert() {
+    const networkAlert = this.alertCtrl.create({
       buttons: [
         {
-          text: 'OK',
           handler: () => {
             if (this.networkDisconnected) {
-              this.showNetworkAlert();
+              this.noNetworkConnectionAlert();
             }
-          }
+          },
+          text: "OK",
         },
-       ]
+      ],
+      message: "Please check your internet connection.",
+      title: "No Internet Connection",
     });
+
     networkAlert.present();
   }
 
@@ -83,6 +84,12 @@ export class MyAppComponent {
       // Here you can do any higher level native things you might need.
       this.splashScreen.hide();
       this.statusBar.styleDefault();
+
+      if (this.network.type === "none") {
+        this.noNetworkConnectionAlert();
+        this.networkDisconnected = true;
+      }
+
       this.favoriteUserCountRefresh();
     });
   }
