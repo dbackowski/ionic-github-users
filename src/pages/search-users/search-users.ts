@@ -36,8 +36,8 @@ export class SearchUsersPageComponent {
           this.loadingProvider.hide();
         }
       ).subscribe(
-        users => {
-          this.users = users
+        result => {
+          this.users = result.items;
         },
         error => {
           this.toastProvider.error('API response error.');

@@ -5,7 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Network } from '@ionic-native/network';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { MyAppComponent } from './app.component';
 import { SearchUsersPageComponent } from '../pages/search-users/search-users';
@@ -35,7 +35,7 @@ import { ToastProvider } from '../providers/toast';
   ],
   imports: [
     BrowserModule,
-    HttpModule,
+    HttpClientModule,
     IonicModule.forRoot(MyAppComponent),
     IonicStorageModule.forRoot(),
   ],
