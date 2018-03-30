@@ -1,0 +1,571 @@
+[33mcommit 438899e4732f135955ac3da4537d44b9de457021[m
+Author: Damian Baćkowski <damianb@profill.com.pl>
+Date:   Tue Mar 6 08:19:59 2018 +0100
+
+    fix potential security vulnerabilities in dependencies
+
+[33mcommit 7de20937952715eeb3449a5535295070e1b15903[m
+Author: Damian Baćkowski <damianb@profill.com.pl>
+Date:   Thu Jan 18 13:56:09 2018 +0100
+
+    update Ionic CLI to 3.19.1
+
+[33mcommit 8032b001ce1e2ebf05db1ff3967115410cc9dd42[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Mon Jan 8 13:09:11 2018 +0100
+
+    change deprecated HttpModule to HttpClientModule
+
+[33mcommit 3a7fdc1e1545e95e54fbff21e2a541c66221bc6b[m
+Author: Damian Baćkowski <damianb@profill.com.pl>
+Date:   Wed Nov 22 08:09:07 2017 +0100
+
+    add cordova plugin network information, fix bugs
+
+[33mcommit 474087c3edffa70c000582d509678bfc06213a15[m
+Author: Damian Baćkowski <damianb@profill.com.pl>
+Date:   Mon Nov 13 11:43:02 2017 +0100
+
+    update typescript to 2.5.3 (fix errors on production builds)
+
+[33mcommit e291fcf1ebbf526a61b3d90de82807068fe67aea[m
+Author: Damian Baćkowski <damianb@profill.com.pl>
+Date:   Mon Nov 13 08:17:50 2017 +0100
+
+    update Ionic to 3.9.2
+
+[33mcommit 0226f2b59ff681e94508fd76c50333adbb7b6020[m
+Author: Damian Baćkowski <damianb@profill.com.pl>
+Date:   Fri Nov 3 08:01:31 2017 +0100
+
+    update angular to 4.4.4
+
+[33mcommit de2f83bdb3062b859bb7fe143b69d90eed99878b[m
+Author: Damian Baćkowski <damianb@profill.com.pl>
+Date:   Mon Oct 30 08:05:37 2017 +0100
+
+    update Ionic to 3.8.0
+
+[33mcommit b9dd6f7934c15279fe576f419f708489eb1c137b[m
+Author: Damian Baćkowski <damianb@profill.com.pl>
+Date:   Mon Oct 2 08:21:18 2017 +0200
+
+    update Ionic to 3.7.1
+
+[33mcommit 9c68f2f512320c4b3cc8ea0bc5a80e25f1a3393a[m
+Author: Damian Baćkowski <damianb@profill.com.pl>
+Date:   Thu Sep 14 08:07:50 2017 +0200
+
+    update README
+
+[33mcommit 1dd6ca9c074f3ddaad525815f941a6d37bb5a9f3[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Sun Sep 10 11:46:43 2017 +0200
+
+    update Ionic to 3.6.1
+
+[33mcommit 5526229ef9c139a69d4373690591e73b8483defc[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Sun Jul 30 18:25:57 2017 +0200
+
+    update Ionic to 3.6.0
+
+[33mcommit ac9e1e9188fb8b101c49034467326d97b26a811d[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Sun Jul 16 20:47:35 2017 +0200
+
+    update Ionic to 3.5.3
+
+[33mcommit a8cebedc4919838a99952dd60196dfcc5ce885e1[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Fri Jul 14 10:40:20 2017 +0200
+
+    update Ionic to 3.5.2
+
+[33mcommit a71f3f8e1ebaa6e1d03ce8577467ce5792ce6980[m
+Author: Damian Baćkowski <damianb@profill.com.pl>
+Date:   Mon Jul 3 08:56:44 2017 +0200
+
+    remove duplicated screenshot
+
+[33mcommit 089be1c61c7bd81145d9f564f3d97e2634aa4ffb[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Sat Jul 1 20:06:52 2017 +0200
+
+    update Ionic to 3.5.0
+
+[33mcommit f29cac3bc22e32a550ce4b511642dd628856369e[m
+Author: Damian Baćkowski <damianb@profill.com.pl>
+Date:   Fri Jun 23 08:45:21 2017 +0200
+
+    update Ionic to 3.4.2
+
+[33mcommit e2ce245f56f837c9306b1bc6a6b7b30f21d24f3a[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Thu Jun 22 17:14:06 2017 +0200
+
+    update Ionic to 3.4.1
+
+[33mcommit 511d2ad9e3ebb06e81a729325294fe3a695dd259[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Tue Jun 6 19:29:35 2017 +0200
+
+    add cordova crosswalk-webview plugin for older android versions, remove cordova console plugin
+
+[33mcommit d50efc6396ecb83241b943b6cf47fea5c394fc35[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Mon Jun 5 20:43:31 2017 +0200
+
+    update Ionic CLI to 3.3.0
+
+[33mcommit 557b91bbd2d8270614c8596d0222ebf95fbf0849[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Thu May 25 16:45:07 2017 +0200
+
+    update Ionic to 3.3.0
+
+[33mcommit 3488c4407379c8d8f39bc6daa697ea1d25b30a8c[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Wed May 24 17:55:39 2017 +0200
+
+    add new screenshots
+
+[33mcommit 27eecdeb81112378dc2f2b419250813cb90e6acb[m
+Author: Damian Baćkowski <damianb@profill.com.pl>
+Date:   Mon May 15 08:56:45 2017 +0200
+
+    update Ionic to 3.2.1
+
+[33mcommit 1cf5f4fc27d422665885c875762aebe86499e800[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Thu May 11 19:45:22 2017 +0200
+
+    update Ionic to 3.2.0
+
+[33mcommit e5b938bea93aecac2d165b95fcb912fc2af314fd[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Tue May 9 19:25:43 2017 +0200
+
+    fix screenshots layout
+
+[33mcommit e4789786a8f254d33d3440cd6bdba0161707d800[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Wed May 3 14:37:17 2017 +0200
+
+    update Ionic to 3.1.1
+
+[33mcommit aa50cf3af907caf02b7120c4c3b04604493b0ba5[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Mon May 1 13:52:33 2017 +0200
+
+    update Ionic to 3.1.0
+
+[33mcommit 378575c51ef00ed164cbb0beb1ac2584bf2c2c0a[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Fri Apr 14 11:07:50 2017 +0200
+
+    code refactoring
+
+[33mcommit c3d59890e9da00de4ebe2b53e57c4ac328178469[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Tue Apr 11 20:44:24 2017 +0200
+
+    remove gists
+
+[33mcommit 4ab11b8385b2ce60cdfcf4b906648a6995c64eb4[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Fri Apr 7 16:43:55 2017 +0200
+
+    update Ionic to 3.0.1
+
+[33mcommit 931dfc9bddb196fcd6cdd62025b4da747331805f[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Thu Apr 6 18:12:27 2017 +0200
+
+    update Ionic to 3.0.0
+
+[33mcommit 09a9bc2ed7842cd3e8934e9b60c3f50d5522ef77[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Sun Apr 2 10:32:47 2017 +0200
+
+    code refactoring
+
+[33mcommit c69a7ddd649c39f98a810744f9fb5841424e49dc[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Sat Apr 1 09:19:50 2017 +0200
+
+    remove scrollable-tabs component, fix tslint rules
+
+[33mcommit 2b76096edf912ebd30b845df0bc55f8dc631ac31[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Tue Mar 28 17:14:42 2017 +0200
+
+    fix bugs
+
+[33mcommit fd567c76dbe0314e3f06911c1183bb18e51ee2c3[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Sun Mar 26 14:42:37 2017 +0200
+
+    update Ionic to 2.3.0
+
+[33mcommit 94f3a3ef4b59324e6ca99ebb8e88c6770d3260f6[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Sat Mar 25 12:28:15 2017 +0100
+
+    add repo language
+
+[33mcommit ecfe86f3163245ba9d290665b4c23e719d746181[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Wed Mar 22 15:45:11 2017 +0100
+
+    add infinite-scroll on: followers, following, repositiories and gists
+
+[33mcommit 552ffdff4b48d25d3f158297d21845e85fd133b5[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Wed Mar 22 08:13:28 2017 +0100
+
+    fix bugs
+
+[33mcommit 4b8c343397ce6c8fd2a6957f488bd640ac6a599a[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Sun Mar 19 19:42:54 2017 +0100
+
+    add stargazers count and forks count on repos list
+
+[33mcommit d85d6554009795fdcfafbb1f9129ee4f7584a081[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Sun Mar 12 16:14:17 2017 +0100
+
+    update Ionic to 2.2.0
+
+[33mcommit c220ed6c9886c1388ed09cc068f2838ab952264e[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Tue Feb 28 17:18:31 2017 +0100
+
+    update @ionic/app-scripts to 1.1.4
+
+[33mcommit d6521be65883b4f6a3f9fb0f440ee9261bab8959[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Mon Feb 27 18:17:58 2017 +0100
+
+    update ionic to 2.1.0
+
+[33mcommit febcc783842e76266d4520e8dbebf204d720b019[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Fri Feb 24 19:22:36 2017 +0100
+
+    change default colors
+
+[33mcommit 68cdc0bd1bc8fdef00bc29c5cb07170980d5b70a[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Thu Feb 23 19:19:47 2017 +0100
+
+    fix styles
+
+[33mcommit 565c50076f7d7158c8f62746fb9ae3f0db5b0c1a[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Wed Feb 22 19:06:39 2017 +0100
+
+    fix styles
+
+[33mcommit e90716997618c9a803cf634510f73d4299ffc700[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Wed Feb 22 18:47:14 2017 +0100
+
+    update ionic-native to 2.5.1
+
+[33mcommit 07ada7ac3b183bf39106de9a61b714a6c7133d22[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Tue Feb 21 18:04:10 2017 +0100
+
+    add user public gists
+
+[33mcommit e5495fe54e7cfde1fe098dce1f2fc40550eb15ff[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Sun Feb 19 15:09:42 2017 +0100
+
+    add pipe to format date with momentjs
+
+[33mcommit 9f5a72482593c9ce46ea1a1cba2d0220e357240b[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Sun Feb 19 15:01:47 2017 +0100
+
+    fix bugs
+
+[33mcommit a6147fc1588e34c202fd32bd01edacedaea7cd42[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Fri Feb 17 19:54:37 2017 +0100
+
+    fix badge position on tabs
+
+[33mcommit 40e00b90d3a552b2a888c520fd07d132ba7b2b4e[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Thu Feb 16 18:40:31 2017 +0100
+
+    fix bugs, add badges on tabs in user details
+
+[33mcommit 2dca13dc56fb86ba98863ece1d2c3e4ea18cac7c[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Wed Feb 15 18:10:03 2017 +0100
+
+    fix user overview
+
+[33mcommit 4869f0f07f2568ae671bc99026baee8ab5a2bf49[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Tue Feb 14 18:05:27 2017 +0100
+
+    change user overview page, fix bugs
+
+[33mcommit 8ed99c6017ac1caaedf7069cd10cfd0b525840f2[m
+Merge: e202996 5b9d53a
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Mon Feb 13 19:22:46 2017 +0100
+
+    Merge branch 'dev'
+
+[33mcommit 5b9d53a881cf3432779a0a112f17fc2e659556f6[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Mon Feb 13 19:21:14 2017 +0100
+
+    add user overview
+
+[33mcommit e202996c0a05010d8dab31eef97742bf2f8fd372[m
+Merge: 9218e6e d10bb75
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Sat Feb 11 12:54:37 2017 +0100
+
+    Merge branch 'dev'
+
+[33mcommit 9218e6e1bfbe0737999d8208da473f4849788c37[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Sat Feb 11 12:30:56 2017 +0100
+
+    update ionic to 2.0.1
+
+[33mcommit beed4e5cb1afdde2886e2a0adc2dde1a8301ae88[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Thu Feb 9 18:48:28 2017 +0100
+
+    add missing cordova plugin
+
+[33mcommit d10bb7505f7f10d14580ff554543526178300b82[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Tue Feb 7 18:46:17 2017 +0100
+
+    initial version of advanced user details
+
+[33mcommit d7278f6e65ffedcf44421a68d75826ce60d0b481[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Mon Feb 6 18:40:04 2017 +0100
+
+    add no network connection alert message
+
+[33mcommit b98931d470dca5b69e94b34d5b5adf3f1ada3363[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Sun Feb 5 11:57:59 2017 +0100
+
+    code refactoring
+
+[33mcommit 9e6c7988820c75b96d3c304a5d617a6af67218a1[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Sat Feb 4 17:57:29 2017 +0100
+
+    code refactoring
+
+[33mcommit 539e3158f048a5449bdae7376661bd9bb85e070a[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Tue Jan 31 17:39:52 2017 +0100
+
+    update screenshots
+
+[33mcommit b798d78f9302b03e7f5f28b41075db15ea77b82d[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Mon Jan 30 17:14:14 2017 +0100
+
+    code refactoring
+
+[33mcommit 60d57af7b8f630af2e3d6279e4cefd0d13672e15[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Sun Jan 29 17:52:27 2017 +0100
+
+    fix bugs, display favourite users counter in menu
+
+[33mcommit 2a70316dd7010b71b4b251d1e5ad2b8a149c2142[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Fri Jan 27 19:39:41 2017 +0100
+
+    fix bugs, code refactoring
+
+[33mcommit 810164c87425daf6c2d17e9aa6c2411e28b705e3[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Thu Jan 26 20:08:13 2017 +0100
+
+    code refactoring
+
+[33mcommit cf9260049d5aa949e3d07c0b37ed8d8b691b9d3e[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Thu Jan 26 19:56:53 2017 +0100
+
+    update ionic to 2.0.0
+
+[33mcommit 112652d908f992931bcc9241bdfaf442f1dddca6[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Wed Jan 25 18:53:40 2017 +0100
+
+    update ionic to 2.0.0-rc6
+
+[33mcommit 51bb00d32ba2205871c3867ab49a751a37a889fe[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Wed Jan 25 18:38:43 2017 +0100
+
+    code refactoring
+
+[33mcommit 03a31b93c1258fd19747f3bf6d8b317dafc32634[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Mon Jan 23 20:21:00 2017 +0100
+
+    fix bugs
+
+[33mcommit f8544b0d4310b66d91916df2ffe8b8a43120952f[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Sun Jan 22 20:39:00 2017 +0100
+
+    add license
+
+[33mcommit 1dd320e736fe5eb16da746c73dbce806f0bb14a5[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Sat Jan 21 12:15:24 2017 +0100
+
+    add screenshots
+
+[33mcommit 961c67564f8b8fc153c17fe3e90c9b0634c90cce[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Fri Jan 20 17:26:30 2017 +0100
+
+    remove unused files
+
+[33mcommit ce572ba411dde962bd993898162248e1b3e9d5b4[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Fri Jan 20 17:15:27 2017 +0100
+
+    add icon and splashscreen
+
+[33mcommit e2e433e347fee1293504685a79845518b34f5190[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Thu Jan 19 17:57:36 2017 +0100
+
+    fix bugs
+
+[33mcommit ccf20b51f4336464a7acebb9f2687996581e3e4b[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Mon Jan 16 16:58:34 2017 +0100
+
+    update ionic to 2.0.0-rc.5
+
+[33mcommit 5fb7fc949f5d76375f6055ea19eb21572f36d701[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Sun Jan 15 10:51:08 2017 +0100
+
+    add menu icons
+
+[33mcommit 604313f9438d8926095d7b6c72febb9d1b0fecdc[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Sat Jan 14 16:38:06 2017 +0100
+
+    add README
+
+[33mcommit 5532103118693f1c7df861befeccf323fb369ebe[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Fri Jan 13 17:38:21 2017 +0100
+
+    fix tslint errors
+
+[33mcommit 0e4cf5d42d3c2c1b12c0ed5e3aca877366bb8abc[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Thu Jan 12 18:07:48 2017 +0100
+
+    add codelyzer, fix some of codelyzer errors
+
+[33mcommit 587e11b07bef8fed44a35e42f6c530392a2d959d[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Thu Jan 12 17:26:13 2017 +0100
+
+    fix bugs, remove unused code
+
+[33mcommit 203ea0ace7b3351605582e710273222d1e20706d[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Tue Jan 10 20:11:03 2017 +0100
+
+    fix application name
+
+[33mcommit c1b98294ad2605f4e16f3e389f8aa70715bcb4bd[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Tue Jan 10 19:20:12 2017 +0100
+
+    fix bugs, migrate favortte users service from promises to observable
+
+[33mcommit 19513e8bf7ea786d380b9df309ca233ba0296bc3[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Mon Jan 9 17:59:19 2017 +0100
+
+    fix bugs, remove unused code
+
+[33mcommit de13de0199735d26b158a36dbca3cdb1480c4b23[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Sun Jan 8 17:14:46 2017 +0100
+
+    add button to remove user from favorites
+
+[33mcommit 64e97f8d3898b862b3ff117798db50547c6db5b1[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Sat Jan 7 20:38:55 2017 +0100
+
+    add favorite users page
+
+[33mcommit d617f86941901fac2a5b40fbf58a18daf7902fde[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Fri Jan 6 14:25:55 2017 +0100
+
+    add button to add user to favorites
+
+[33mcommit f35b9a134e0d3344b1db2ca428398e8a1e23ecf9[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Thu Jan 5 20:43:13 2017 +0100
+
+    fix bugs
+
+[33mcommit 0104a6ad916a2ff52d2b94c8c961742bfad95007[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Wed Jan 4 19:23:57 2017 +0100
+
+    add toast messages and loading screen
+
+[33mcommit a0117fdfac09e6e9f090f77f50e132cbaf2548e8[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Tue Jan 3 16:57:00 2017 +0100
+
+    add debounce to 500 ms in user live search
+
+[33mcommit 17fff1a28525c4db364ea79ebef38585ecc84dee[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Mon Jan 2 14:48:18 2017 +0100
+
+    add user search bar
+
+[33mcommit b9cd7fcd895aeadc6e7916354da8054c93018e8f[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Thu Dec 29 18:04:11 2016 +0100
+
+    fix user details
+
+[33mcommit 017b5ffb15c2e650c59d05af51e0a6eaa9a40d06[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Tue Dec 27 16:40:52 2016 +0100
+
+    add user details page
+
+[33mcommit d073c7e467e41f04070c8d51cf8af9317adee8af[m
+Author: Damian Baćkowski <damianbackowski@gmail.com>
+Date:   Tue Dec 20 18:12:22 2016 +0100
+
+    initial commit
